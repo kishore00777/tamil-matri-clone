@@ -6,6 +6,7 @@ import Youtube from "../Components/Home/Youtube";
 import Carousels from "../Components/Home/Carousel";
 import AboutMatirimony from "../Components/AboutMatirimony";
 import Footer from "../Components/Footer";
+import Search from "../Components/Home/Search";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Interset />
         <Youtube />
         <Carousels />
+        <Search />
         <AboutMatirimony />
         <Footer />
       </>

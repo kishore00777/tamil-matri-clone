@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import MainPage from "../Components/Religion/MainPage";
 
 const Religion = () => {
   return (
-    <div>Religion</div>
-  )
-}
+    <>
+      <MainPage />
+    </>
+  );
+};
 
-export default Religion
+export default Religion;
