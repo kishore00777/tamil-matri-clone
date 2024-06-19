@@ -1,0 +1,498 @@
+var version;
+if(navigator.appVersion.indexOf("MSIE")!=-1) {
+	temp = navigator.appVersion.split("MSIE");
+	version = parseFloat(temp[1]);
+}
+else
+{version =0;}
+
+	var L=location.href;
+	var url;
+	var L1=L.indexOf('.com/')
+	var L2=L.substring(0,L1);
+	L2=L2.toLowerCase()
+	//var qsdomain=L2.replace('www','profile');
+	var qsdomain=L2.replace('www','www');
+	qsdomain=qsdomain.replace('img','www');
+	qsdomain=qsdomain.replace('image','www');
+
+	var d1=qsdomain.indexOf(".");
+	var d2=qsdomain.indexOf("matrimony");
+	var domainname=qsdomain.substring(d1+1,d2)
+
+var message;
+var http_request = false;
+
+function IsEmpty(obj, obj_type)
+{
+	if (obj_type == "text" || obj_type == "password" || obj_type == "textarea" || obj_type == "file")	{
+		var objValue;
+		
+		objValue = obj.value.replace(/\s+$/,"");
+		if (objValue.length == 0) {
+			//obj.focus();
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+
+function ValidateNo( NumStr, String )
+{
+	for( var Idx = 0; Idx < NumStr.length; Idx ++ )
+ 	{
+		 var Char = NumStr.charAt( Idx );
+		 var Match = false;
+
+		for( var Idx1 = 0; Idx1 < String.length; Idx1 ++)
+		{
+		 if( Char == String.charAt( Idx1 ) )
+		 Match = true;
+		}
+		if ( !Match )
+		return false;
+ 		}
+       	return true;
+}
+
+function validateSearchForm() { 
+
+	var MatriForm1 = this.document.MatriForm1;
+	var stAge=0, endAge=0, minage='';
+	stAge=MatriForm1.STAGE.value;
+	endAge=MatriForm1.ENDAGE.value;
+	GENDER=MatriForm1.GENDER.value;
+	(GENDER=="F") ? minage=18 : minage=21;
+
+	var FINALAGE=parseInt(endAge)-parseInt(stAge);
+	/*if (domainname=="bharat") {	
+		if(!validateDomain(MatriForm1,"dmerr")) {
+			return false;
+		}		
+	} else 	{			
+		if(!validateReligion(MatriForm1,"relerr")) {
+			return false;
+		}
+	}*/
+	if(!validateAge(MatriForm1,'ageerr',MatriForm1.GENDER.value)){
+		return false;
+	}
+
+	if (domainname=="bharat") {
+		//var burl=document.MatriForm1.LANGUAGE.options[document.MatriForm1.LANGUAGE.selectedIndex].text;
+		var su=qsdomain+".com/search/searchres.php?t=Q&randid="+genNumbers();
+	} else {
+		var su=qsdomain+".com/search/searchres.php?t=Q&randid="+genNumbers();
+	}	
+	if(arguments[0]){
+		su+="&partner="+arguments[0];
+	}
+	MatriForm1.action=su;				
+	MatriForm1.submit();
+}
+
+
+function dgebid(obj){
+		if(document.getElementById){
+			if(document.getElementById(obj)!=null){return document.getElementById(obj)}else{return "";}
+		}else if(document.all){
+			if(document.all[obj]!=null){return document.all[obj]}else{return "";}
+		}
+	}
+
+function validatequickSearchForm(){
+	
+	var GENDER = $('#GENDER1').val();
+	genderval=GENDER!="M"?"brides":"grooms";
+	if (domainname!="bharat") {
+
+	var religionval = $('#RELIGION1').val();
+	religionvals=JSON.parse($('#RELIGIONVAL').val());
+	religionvalvalue=religionvals[religionval];
+	var castevaldig= $('#CASTERIGHT').val().split("_")[1];
+	var castevals= JSON.parse($('#CASTEVAL').val());
+	casteval=castevals[castevaldig];
+	if(casteval!=undefined && casteval!=null){
+	 var selectcasteval = casteval.replace(/([\/\(\)\s\-])+/g, '-'); 
+      	 var ctval=selectcasteval.toLowerCase()
+	 var s=ctval.substring(ctval.length,ctval.length-1);			
+   	}
+}else if(domainname=="bharat"){
+
+	mothertongue=$('#MOTHERTONGUERIGHT').val();
+
+	mothertonguevals=JSON.parse($('#MOTHERTONGUEVAL').val());
+	mothertongueval=mothertonguevals[mothertongue];
+
+}
+
+	if (domainname!="bharat") {
+	  if(castevaldig!=0 && castevaldig!=null && religionval!=0 && religionval!=null){
+		var rval=religionvalvalue.toLowerCase()
+		if(s=='-'){
+			var su=qsdomain+".com/"+rval+ctval+genderval;
+		}else{
+			var su=qsdomain+".com/"+rval+"-"+ctval+"-"+genderval;
+		}
+
+	 }
+	 else if(castevaldig!=0 && castevaldig!=null){
+		
+		if(s=='-'){
+			var su=qsdomain+".com/"+ctval+genderval;
+		}else{
+			var su=qsdomain+".com/"+ctval+"-"+genderval;
+		}
+	} else if(religionval!=0 && religionval!=null){
+		var rval=religionvalvalue.toLowerCase()
+		if(rval == "inter-religion"){
+		var rval = rval.replace(/-/g, " ");
+		
+		}	
+		var su=qsdomain+".com/"+rval+"-"+genderval;
+
+	}else{
+		var su=qsdomain+".com/"+genderval;
+	}
+	}else if(domainname=="bharat"){
+
+	if (mothertongue!=0 && mothertongue!=null) {
+		var mtval= mothertongueval.toLowerCase()
+
+		var su=qsdomain+".com/"+mtval+"-"+genderval;
+	}else{
+		var su=qsdomain+".com/"+genderval;
+
+	}
+
+	}
+
+	$('#quicksearchform').attr("action", su);
+	$('#quicksearchform').submit();
+
+	}
+
+
+function homepageformvalidate(){
+var MatriForm1 = this.document.quicksearchform;
+GENDER=$('#GENDER1').val();
+genderval=GENDER!="M"?"brides":"grooms";
+if (domainname!="bharat") {
+
+religionval=$('#RELIGION1').val();
+religionvals=JSON.parse($('#RELIGIONVAL').val());
+religionvalvalue=religionvals[religionval];
+
+var castevaldig=$('#CASTERIGHT').val().split("_")[1];
+castevals=JSON.parse($('#CASTEVAL').val());
+casteval=castevals[castevaldig];
+
+if(casteval!=undefined && casteval!=null){
+	 var selectcasteval = casteval.replace(/([\/\(\)\s\-])+/g, '-'); 
+      	 var ctval=selectcasteval.toLowerCase()
+	 var s=ctval.substring(ctval.length,ctval.length-1);	    
+}
+}else if(domainname=="bharat"){
+	mothertongue=MatriForm1.MOTHERTONGUERIGHT.value;
+	mothval = MatriForm1.MOTHERTONGUEVAL.value;
+	mothertonguevals=JSON.parse(mothval);
+	mothertongueval=mothertonguevals[mothertongue];
+	
+	var castevaldig=$('#CASTERIGHT').val().split("_")[1];
+	castevals=JSON.parse($('#CASTEVAL').val());
+	casteval=castevals[castevaldig];
+
+if(casteval!=undefined && casteval!=null){
+	 var selectcasteval = casteval.replace(/([\/\(\)\s\-])+/g, '-'); 
+     var ctval=selectcasteval.toLowerCase()
+	 var s=ctval.substring(ctval.length,ctval.length-1);	    
+}
+	
+}
+if (domainname!="bharat") {
+	if(castevaldig!=0 && castevaldig!=null && religionval!=0 && religionval!=null){
+		var rval=religionvalvalue.toLowerCase()
+		if(s=='-'){
+			var su=qsdomain+".com/"+rval+ctval+genderval;
+		}else{
+			var su=qsdomain+".com/"+rval+"-"+ctval+"-"+genderval;
+		}
+
+	 }
+else if(castevaldig!=0 && castevaldig!=null){
+		
+		if(s=='-'){
+			var su=qsdomain+".com/"+ctval+genderval;
+		}else{
+			var su=qsdomain+".com/"+ctval+"-"+genderval;
+		}
+        }else if(religionval!=0 && religionval!=null){
+		var rval=religionvalvalue.toLowerCase()
+		var su=qsdomain+".com/"+rval+"-"+genderval;
+
+}else{
+	var su=qsdomain+".com/"+genderval;
+
+}
+}else{
+if(castevaldig!=0 && castevaldig!=null && mothertongue!=0 && mothertongue!=null){
+		var mtval= mothertongueval.toLowerCase()
+		if(s=='-'){
+			var su=qsdomain+".com/"+mtval+ctval+genderval;
+		}else{
+			var su=qsdomain+".com/"+mtval+"-"+ctval+"-"+genderval;
+		}
+	}
+else if(castevaldig!=0 && castevaldig!=null){
+		
+		if(s=='-'){
+			var su=qsdomain+".com/"+ctval+genderval;
+		}else{
+			var su=qsdomain+".com/"+ctval+"-"+genderval;
+		}
+        }else if(mothertongue!=0 && mothertongue!=null) {
+		var mtval= mothertongueval.toLowerCase()
+		var su=qsdomain+".com/"+mtval+"-"+genderval;
+	}else{
+	var su=qsdomain+".com/"+genderval;
+
+}
+
+
+}
+	MatriForm1.action=su;	
+	MatriForm1.submit();
+
+}
+
+
+
+
+function chkgender(g)
+{ 
+if (g=="f")   { document.MatriForm1.STAGE.value="18"; document.MatriForm1.ENDAGE.value="30"; }
+if (g=="m") {  document.MatriForm1.STAGE.value="21"; document.MatriForm1.ENDAGE.value="33"; }
+}
+
+function validateReligion(MatriForm1,relerr) {
+		if (MatriForm1.RELIGION.selectedIndex == 0 )
+			{
+			dgebid(relerr).innerHTML="Please select Religion";
+			BN(relerr,'b');
+			MatriForm1.RELIGION.focus();
+			return false;
+			} else{
+			dgebid(relerr).innerHTML="";
+			BN(relerr,'n');
+			return true;
+			}
+}
+
+function validateDomain(MatriForm1,dmerr) {
+		if (MatriForm1.LANGUAGE.selectedIndex == 0 )
+			{
+			dgebid(dmerr).innerHTML="Please select Regional Site";
+			BN(dmerr,'b');
+			MatriForm1.LANGUAGE.focus();
+			return false;
+			} else{
+			dgebid(dmerr).innerHTML="";
+			BN(dmerr,'n');				
+			return true;
+			}
+}
+	//Ajax
+//*************
+
+function loadcaste(qsval)
+{
+	if (qsval>0)
+	{
+		var wdt;
+		(arguments[1])?wdt=arguments[1]:wdt=158;
+		url=L2+".com/search/ajaxlangversionrelcastenew.php?ln=en&stype=qs&sid="+domainname+"&rid="+qsval+"&width="+wdt+"&fntwidth=8";
+		makeRequest(url);
+	}
+	if (DOMAINARRAY['domainnameshort']=="bharat") {
+		if (document.MatriForm1.LANGUAGE.value != 0) {
+			var mothertongueright_rp=document.MatriForm1.MOTHERTONGUERIGHT;
+			if (MatriForm1.LANGUAGE.value==13) { mothertongueright_rp.value=2; }
+			else if (MatriForm1.LANGUAGE.value==7) { mothertongueright_rp.value=4; }
+			else if (MatriForm1.LANGUAGE.value==5) { mothertongueright_rp.value=14; }
+			else if (MatriForm1.LANGUAGE.value==10) { mothertongueright_rp.value=17; }
+			else if (MatriForm1.LANGUAGE.value==4) { mothertongueright_rp.value=19; }
+			else if (MatriForm1.LANGUAGE.value==3) { mothertongueright_rp.value=31; }
+			else if (MatriForm1.LANGUAGE.value==6) { mothertongueright_rp.value=33; }
+			else if (MatriForm1.LANGUAGE.value==14) { mothertongueright_rp.value=34; }
+			else if (MatriForm1.LANGUAGE.value==11) { mothertongueright_rp.value=40; }
+			else if (MatriForm1.LANGUAGE.value==12) { mothertongueright_rp.value=14; }
+			else if (MatriForm1.LANGUAGE.value==8) { mothertongueright_rp.value=41; }
+			else if (MatriForm1.LANGUAGE.value==9) { mothertongueright_rp.value=45; }
+			else if (MatriForm1.LANGUAGE.value==1) { mothertongueright_rp.value=47; }
+			else if (MatriForm1.LANGUAGE.value==2) { mothertongueright_rp.value=48; }
+			else if (MatriForm1.LANGUAGE.value==15) { mothertongueright_rp.value=51; }
+			else { mothertongueright_rp.value=0; }		
+		}
+	}
+	
+}
+function loadbharatcaste(sval,DomainName){
+	if (DomainName!="bharat") {
+			var hp_qs_language;
+			var domainnamechk = DomainName;	
+			if (domainnamechk=="assamese") { hp_qs_language=13; }
+			else if (domainnamechk=="bengali") { hp_qs_language=7; }
+			else if (domainnamechk=="gujarati") { hp_qs_language=5; }
+			else if (domainnamechk=="hindi") { hp_qs_language=10; }
+			else if (domainnamechk=="kannada") { hp_qs_language=4; }
+			else if (domainnamechk=="kerala") { hp_qs_language=3; }
+			else if (domainnamechk=="marathi") { hp_qs_language=6; }
+			else if (domainnamechk=="marwadi") { hp_qs_language=14; }
+			else if (domainnamechk=="oriya") { hp_qs_language=11; }
+			else if (domainnamechk=="parsi") { hp_qs_language=12; }
+			else if (domainnamechk=="punjabi") { hp_qs_language=8; }
+			else if (domainnamechk=="sindhi") { hp_qs_language=9; }
+			else if (domainnamechk=="tamil") { hp_qs_language=1; }
+			else if (domainnamechk=="telugu") { hp_qs_language=2; }
+			else if (domainnamechk=="urdu") { hp_qs_language=15; }
+			else { hp_qs_language=0; }		
+			if (sval==0) {	url="/register/ajax_registration.php";
+			var params = "type=Quicksearch&language="+hp_qs_language+"&religion=null";
+			}
+			else { url="/register/ajax_registration.php"; 
+			var params = "type=Quicksearch&language="+hp_qs_language+"&religion="+sval; }
+		}else{
+			var url = "/register/ajax_registration.php";
+			var params = "type=Quicksearch&religion=null";
+		}
+		$.ajax({
+			url: url,   
+			type: 'GET',
+			data: params,
+			success: function (response) {
+					var objSelect = dgebid('CASTERIGHT');
+					var result = populateSelect(objSelect,eval(response));
+			}
+		});
+}
+
+
+function populateSelect(objSelect,optlist){
+	objSelect.length=0;
+	for(ic=0;ic<optlist.length;ic++){
+		var objOption = document.createElement("option");
+		objOption.text = optlist[ic].caption;
+		objOption.value = optlist[ic].value;
+		if(objOption.value!="no"){
+			if(document.all && !window.opera) {objSelect.add(objOption);}
+			else{objSelect.add(objOption, null);}
+		}
+	}
+	if(document.MatriForm1.MOTHERTONGUERIGHT.selectedIndex=="0" ||		document.MatriForm1.RELIGION.selectedIndex=="0" ){		
+		document.MatriForm1.CASTERIGHT.options[0].text=" Caste / Division - Any";
+		document.MatriForm1.CASTERIGHT.options[0].value="0";		
+	}	
+}
+
+
+    function makeRequest(url) {
+
+        http_request = false;
+
+        if (window.XMLHttpRequest) { // Mozilla, Safari,...
+            http_request = new XMLHttpRequest();
+        } else if (window.ActiveXObject) { // IE
+            try {
+                http_request = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    http_request = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {}
+            }
+        }
+
+        if (!http_request) {
+            alert('Giving up :( Cannot create an XMLHTTP instance');
+            return false;
+        }
+        http_request.onreadystatechange = alertContents;
+        http_request.open('GET', url, true);
+        http_request.send(null);
+
+    }
+
+    function alertContents() {
+
+        if (http_request.readyState == 4) {
+            if (http_request.status == 200) 
+			{
+				dgebid('qsrecaste').innerHTML=http_request.responseText;
+            } else 
+			{
+                alert('There was a problem with the request.');
+            }
+        }
+    }
+
+
+function validateAge(sf,did) {
+	var minage=0;
+	var maxage=70;
+	stAge=sf.MINAGE.value;
+	endAge=sf.MAXAGE.value;	
+	if(arguments[2]!="" && arguments[2]!="undefined" && arguments[2]!=undefined) {
+		var GENDER=arguments[2];
+	} else {
+		for(var i=0;i<2;i++){
+			if(sf.GENDER[i].checked==true) {
+				var GENDER=sf.GENDER[i].value;  
+			}
+		}
+	}
+	(GENDER=="F") ? minage=18 : minage=21;			
+	var FINALAGE=parseInt(endAge)-parseInt(stAge);
+	BN(did,'b');
+
+	if(IsEmpty(sf.MINAGE,"text")) {
+		agefocus();
+		dgebid(did).innerHTML="Please enter the age range.";
+		return false;
+	} else if(!(CompareValue(sf.MINAGE.value,"0123456789"))) {
+		agefocus();
+		dgebid(did).innerHTML="Sorry, Invalid Age "+stAge+".";
+		return false;
+	} else if(IsEmpty(sf.MAXAGE, "text")) {
+		dgebid(did).innerHTML="Please enter the age range.";
+		return false;
+	}  else if(!(CompareValue(sf.MAXAGE.value,"0123456789"))) {
+		agefocus();
+		dgebid(did).innerHTML="Sorry, Invalid Age "+endAge+".";
+		return false;
+	} else if(stAge!=0 && endAge<stAge) {
+		agefocus();
+		dgebid(did).innerHTML="Sorry, Invalid age range. "+stAge+" to "+endAge+".";
+		return false;
+	} else if(stAge < minage || stAge > maxage) {
+		agefocus();
+		dgebid(did).innerHTML= "Sorry, invalid age "+stAge+" (Min. age is "+minage+". Max. age is "+maxage+")." ;
+		return false;
+	} else if(parseInt(stAge)<18 || parseInt(stAge)>maxage) {
+		agefocus();
+		dgebid(did).innerHTML="Sorry, invalid age "+stAge+" (Min. age is "+minage+". Max. age is "+maxage+").";	
+		return false;
+	} else if(parseInt(FINALAGE)>22) {
+		agefocus();
+		dgebid(did).innerHTML="The difference between a partner's \"From\" and \"To\" age should not exceed 22 years.";
+		return false;	
+	} else {
+		BN(did,'n');
+		dgebid(did).innerHTML="&nbsp;";
+		return true;
+	}	
+}
+
+function agefocus() {
+	//window.location.href="#agf";
+}

@@ -1,0 +1,89 @@
+var FAQPopulated = false;
+fetchFAQContents("FooterJsonFiles/FAQContents.json.php");	
+/*$(document).ready(function () {
+     $(window).scroll(_.throttle(function () {
+        if (!FAQPopulated) {
+            fetchFAQContents("Faqjsonfiles/GujaratiFAQContents.json");
+            FAQPopulated = true;
+        }
+    }, 300)); 
+    //fetchFAQContents("Faqjsonfiles/GujaratiFAQContents.json.php");
+
+});*/
+
+function fetchFAQContents(SourcePathName) {
+    $.ajax({
+        async: true,
+        type: "GET",
+        url: SourcePathName,
+        dataType: "json",
+        success: function (response) {
+            console.log(response);
+            populateQuestionAnswers(response);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    })
+}
+
+function populateQuestionAnswers(ContentsStructure) {
+    var ContentsBlockObj = $("#FAQ-Contents-Block");
+
+    var QuestionAnserBlockObj = $('<div class="acc-bdr acc-bdr1">'
+        + '  <div class="accordion_head1"></div>'
+        + '  <div class="accordion_body1" style="display: none;">'
+        + '      <div class="cyber-pad1 text-left">'
+        + '          <div class="scrollbar acc-ht acc-ht1 mt-0 mb-0">'
+        + '              <div class="rghttablink rghttablink1">'
+        + '              </div>'
+        + '          </div>'
+        + '      </div>'
+        + '  </div>'
+        + '</div>');
+
+    ContentsStructure.forEach((eachQAInfo, eachQAKey) => {
+        var TempQuestionAnserBlockObj = QuestionAnserBlockObj.clone();
+
+        var QuestionText = $.parseHTML(eachQAInfo.Question + '<span class="plusminus1">+</span>');
+        TempQuestionAnserBlockObj.find(".accordion_head1").append(QuestionText);
+
+        eachQAInfo.Answer.forEach((eachAnswerBlockInfo, eachAnswerBlockKey) => {
+            if (typeof (eachAnswerBlockInfo) == 'string') {
+                var AnswerText = $.parseHTML("<div class='faq-answer'>" + eachAnswerBlockInfo + "</div>");
+                TempQuestionAnserBlockObj.find(".rghttablink").append(AnswerText);
+            } else if (typeof (eachAnswerBlockInfo) == 'object' && eachAnswerBlockInfo.length) {
+                var ListableBlockObj = $('<div class="faq-ul-list"><ul></ul></div>');
+                eachAnswerBlockInfo.forEach((eachListValue, eachListKey) => {
+                    var AnswerText = $.parseHTML("<li>" + eachListValue + "</li>");
+                    ListableBlockObj.find("ul").append(AnswerText);
+                });
+
+                TempQuestionAnserBlockObj.find(".rghttablink").append(ListableBlockObj);
+            }
+        })
+
+        ContentsBlockObj.append(TempQuestionAnserBlockObj);
+    });
+
+
+    //toggle the component with class accordion_body1
+    $(".accordion_head1").click(function () {
+        if ($('.accordion_body1').is(':visible')) {
+            $(".accordion_body1").slideUp(300);
+            $(".plusminus1").text('+');
+            $(this).removeClass("acc-active1");
+        }
+
+        if ($(this).next(".accordion_body1").is(':visible')) {
+            $(this).next(".accordion_body1").slideUp(300);
+            $(this).children(".plusminus1").text('+');
+            $(this).removeClass("acc-active1");
+        } else {
+            $(this).next(".accordion_body1").slideDown(300);
+            $(this).children(".plusminus1").html('&#150;');
+            $(".accordion_head1").removeClass("acc-active1");
+            $(this).addClass("acc-active1");
+        }
+    });
+}

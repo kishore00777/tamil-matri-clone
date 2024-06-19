@@ -1,0 +1,76 @@
+regFirstFormErr = {
+	//Profile created for
+	"0": {"0": "Select profile for"},
+	//Name
+	"1": {
+		"0": "Invalid. You can't use numeric values",
+		"1": "Please enter your son's name",
+		"2": "Please enter your daughter's name",
+		"3": "Please enter brother's name",
+		"4": "Please enter sister's name",
+		"5": "Please enter your relative's name",
+		"6": "Please enter your friend's name",
+		"7": "Please enter your name",
+		"8": "Invalid. Spaces and special characters are not allowed in the password.",
+		 
+	},
+	//Gender
+	"2": {"0": "Select Gender"},
+	//Date of birth
+	"3": {
+		"0": "Please enter date of birth of groom",
+		"1": "Please select date of birth of bride",
+		"2": "The age value does not match with the date-of-birth. Select correct date of birth of bride / groom",
+		"3": "Please enter date of birth of groom",
+		"4": "Please enter date of birth of bride",
+		"5": "Please enter month of birth of groom",
+		"6": "Please enter month of birth of bride",
+		"7": "Please enter year of birth of groom",
+		"8": "Please enter year of birth of bride",
+		"9": "Groom must be 21 or older to register",
+		"10": "Bride must be 18 or older to register",
+		"11": "Maximum age allowed is 70",
+		"12": "You must be atleast 21 yrs old to register",
+		"13": "Enter valid date",
+		"14": "Enter valid month",
+		"15": "Enter valid Year",
+		"16": "Please select correct date. This month doesn't have 30 or 31",
+		"17": "This is not a leap year. Please select the correct date",
+		"18": "Please select correct date. This month doesn't have 31",
+	},
+	//Religion
+	"4": {"0": "Please select Religion"},
+	//Mothertongue
+	"5": {"0": "Please select Mother Tongue"},
+	//Country code
+	"6": {"0": "Select country code."},
+	//Mobile No
+	"7": {		
+		"0": "Please enter mobile number",
+		"1": "Please enter a valid mobile number",
+		"2": "Please enter Valid Area / STD code",
+		"3": "Please enter valid landline number",		
+		"4": "Please enter valid area code / phone number",
+		"5": "Please enter valid STD code / phone number",
+		"6": "Enter 10 digits for the mobile number",
+	},
+	//Email
+	"8": {		
+		"0": "Please enter e-mail ID",
+		"1": "Please enter valid e-mail ID"
+	},
+	//Password
+	"9": {		
+		"0": "Please enter password",
+		"1": "Password must have between 6-20 characters Please enter password",
+		"2": "Invalid. Name and password cannot be the same",
+		"3": "Sorry, your password has been rejected. It is recommended that you submit a password with alphanumeric characters",		
+		"4": "Invalid. Spaces and special characters are not allowed in the password"
+	}
+	
+	
+};
+
+	
+
+			

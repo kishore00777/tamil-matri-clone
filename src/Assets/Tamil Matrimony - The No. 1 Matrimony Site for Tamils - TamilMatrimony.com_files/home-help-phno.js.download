@@ -1,0 +1,22 @@
+function livehelpphno(){
+	if(ban_country == 98){
+		document.getElementById('displayIN').style.display = "none";
+		document.getElementById('displayUAE').style.display = "block";
+		document.getElementById('cntryphno').innerHTML ="INDIA : 0-8144-99-88-77";
+		document.getElementById('marginhdot').style.margin = "0px 0px 0px 0px";
+	}
+	else if (ban_country == 220){
+		document.getElementById('displayIN').style.display = "block";
+		document.getElementById('displayUS').style.display = "block";
+		document.getElementById('displayUK').style.display = "block";
+		document.getElementById('displayUAE').style.display = "none";
+		document.getElementById('displayMY').style.display = "block";
+		document.getElementById('cntryphno').innerHTML ="UAE : 800035702889";
+		document.getElementById('marginhdot').style.margin = "10px 0px 0px 0px";
+	}else{
+		document.getElementById('cntryphno').innerHTML ="INDIA : 0-8144-99-88-77";
+		document.getElementById('marginhdot').style.margin = "0px 0px 0px 0px";
+	}
+
+
+}
