@@ -9,7 +9,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="religion" element={<MainPage />} />
-         
         </Routes>
       </BrowserRouter> 
     </>

@@ -1,103 +1,18 @@
-import { Button, Card, CardContent, Grid, Pagination, Stack, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardContent,
+  Grid,
+  Pagination,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import Profile from "../../../Assets/Religion/Profile.png";
 import CallIcon from "../../../Assets/Religion/call-icon.png";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import { ProfileDetails } from "../../../Data";
 
-const ProfileDetails = [
-  {
-    id:1,
-    Age: "22 yrs",
-    Height: 5.6,
-    Language: "Tamil",
-    Address:
-      "Vishwakarma, Carpentry (Vadrangi, Vadla), MBA, Not working, Uthirattathi, Thanjavur, Tamil Nadu",
-  },
-  {
-    id:2,
-    Age: "25 yrs",
-    Height: 5.0,
-    FatherName: "Veera Saivam",
-    Language: "Tamil",
-    Address:
-      "Vishwakarma, Carpentry (Vadrangi, Vadla), MBA, Not working, Uthirattathi, Thanjavur, Tamil Nadu",
-  },
-  {
-    id:3,
-    Age: "40 yrs",
-    Height: 5.1,
-    Language: "English",
-    Address:
-      "B.Sc., Accounts / Finance Professional, Thiruvonam, Madurai, Tamil Nadu",
-  },
-  {
-    id:4,
-    Age: "33 yrs",
-    Height: 6,
-    FatherName: "Veera Saivam",
-    Language: "Tamil",
-    Address:
-      "B.Sc IT/ Computer Science, Software Professional, Karthigai, Kovilpatti, Tamil Nadu",
-  },
-  {
-    id:5,
-    Age: "26 yrs",
-    Height: 5.6,
-    Language: "Malaiyalam",
-    Address:
-      "ME / M.Tech., Business Owner / Entrepreneur, Uthradam, Chennai, Tamil Nadu",
-  },
-  {
-    id:6,
-    Age: "40 yrs",
-    Height: 5.6,
-    Language: "Tamil",
-    Address:
-      "Vishwakarma, Carpentry (Vadrangi, Vadla), MBA, Not working, Uthirattathi, Thanjavur, Tamil Nadu",
-  },
-  {
-    id:7,
-    Age: "33 yrs",
-    Height: 5.0,
-    FatherName: "Veera Saivam",
-    Language: "Tamil",
-    Address:
-      "Vishwakarma, Carpentry (Vadrangi, Vadla), MBA, Not working, Uthirattathi, Thanjavur, Tamil Nadu",
-  },
-  {
-    id:8,
-    Age: "38 yrs",
-    Height: 5.1,
-    Language: "English",
-    Address:
-      "B.Sc., Accounts / Finance Professional, Thiruvonam, Madurai, Tamil Nadu",
-  },
-  {
-    id:9,
-    Age: "33 yrs",
-    Height: 6,
-    FatherName: "Veera Saivam",
-    Language: "Tamil",
-    Address:
-      "B.Sc IT/ Computer Science, Software Professional, Karthigai, Kovilpatti, Tamil Nadu",
-  },
-  {
-    id:10,
-    Age: "27 yrs",
-    Height: 5.6,
-    Language: "Malaiyalam",
-    Address:
-      "ME / M.Tech., Business Owner / Entrepreneur, Uthradam, Chennai, Tamil Nadu",
-  },
-  {
-    id:11,
-    Age: "40 yrs",
-    Height: 5.6,
-    Language: "Tamil",
-    Address:
-      "Vishwakarma, Carpentry (Vadrangi, Vadla), MBA, Not working, Uthirattathi, Thanjavur, Tamil Nadu",
-  },
-];
 const ProfileList = () => {
   return (
     <>
@@ -116,7 +31,7 @@ const ProfileList = () => {
       <Grid sx={{ mt: 4 }}>
         {ProfileDetails.map((list) => (
           <Card
-          key={list.id}
+            key={list.id}
             sx={{
               mb: 3,
               minWidth: 275,
@@ -226,7 +141,12 @@ const ProfileList = () => {
           </Card>
         ))}
         <Stack spacing={2}>
-          <Pagination sx={{display: 'flex', justifyContent: 'end'}} count={ProfileDetails.length} variant="outlined" shape="rounded" />
+          <Pagination
+            sx={{ display: "flex", justifyContent: "end" }}
+            count={ProfileDetails.length}
+            variant="outlined"
+            shape="rounded"
+          />
         </Stack>
       </Grid>
     </>

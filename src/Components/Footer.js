@@ -4,62 +4,8 @@ import facebook from "../Assets/fb-icon.png";
 import insta from "../Assets/instagrram-icon.png";
 import twitter from "../Assets/twitter-icon.png";
 import React from "react";
-const Regional = [
-  "Assamese Matrimony",
-  "Bengali Matrimony",
-  "Bihari Matrimony",
-  "Gujarati Matrimony",
-  "Hindi Matrimony",
-  " Kannada Matrimony",
-  " Kerala Matrimony",
-  "Marathi Matrimony",
-  "Marwadi Matrimony",
-  "Oriya Matrimony",
-  "Parsi Matrimony",
-  "Punjabi Matrimony",
-  "Rajasthani Matrimony",
-  "Sindhi Matrimony",
-  "Tamil Matrimony",
-  "Telugu Matrimony",
-  "Urdu Matrimony",
-];
+import { Help, MatrimonyServices, OtherService, Regional, WeddingServices, information } from "../Data";
 
-const Help = ["24x7 Live help", "Contact us", "Feedback", "FAQs"];
-
-const OtherService = [
-  "EliteMatrimony.com",
-  "Jodii",
-  "Jodi",
-  "Muslim match App Store",
-  "Muslim match Play Store",
-];
-
-const WeddingServices = ["Mandap.com", "WeddingBazaar.com"];
-
-const information = [
-  "About Us",
-  "Awards",
-  "Milestones",
-  "Register Free",
-  "Partner Search",
-  "Member Login",
-  "Success stories",
-  "Payment Options",
-  "Careers",
-  "Media Room",
-  "TV Commercials",
-  "Advertise with us",
-  "Terms & Conditions",
-  "Privacy Policy",
-];
-
-const MatrimonyServices = [
-  "HappyMarriages.com",
-  "Matrimonial Sites",
-  "Matrimonial Websites",
-  "Tamil Matrimony Branches",
-  "Tamil Jathagam",
-];
 
 const style = {
   fontSize: "14px",
