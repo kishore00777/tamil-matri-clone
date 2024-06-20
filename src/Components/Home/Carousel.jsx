@@ -12,18 +12,50 @@ export default function Carousels() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    // customPaging: (i) => (
+    //   <Grid container spacing={2}>
+    //     {SliderImg.map((i) => (
+    //       <Grid item>
+    //         <img
+    //           src={i}
+    //           alt={`hello`}
+    //           style={{ width: "50px", height: "50px" }}
+    //         />
+    //       </Grid>
+    //     ))}
+    //   </Grid>
+    // ),
+
+    appendDots: (dots) => (
+      <Grid style={{ display: "flex", justifyContent: "center" }}>
+        <ul
+          style={{
+            width: "30%",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          {dots}
+        </ul>
+      </Grid>
+    ),
     customPaging: (i) => (
-      <div>
+      <div style={{marginTop: 55}}>
         <img
           src={SliderImg[i]}
-          alt={`hello`}
-          style={{ width: "50px", height: "50px" }}
+          alt={`dot-${i}`}
+          style={{
+            width: "50px",
+            height: "50px",
+            borderRadius: "50%",
+            border: "2px solid orange",
+          }}
         />
       </div>
     ),
   };
   return (
-    <Box sx={{ backgroundColor: "#f4f8f7" }}>
+    <Box sx={{ backgroundColor: "#f4f8f7", paddingBottom: 8 }}>
       <Container maxWidth="lg" sx={{ pt: 8, pb: 10 }}>
         <Grid>
           <Typography sx={{ fontSize: 36, fontWeight: 900, marginBottom: 6 }}>

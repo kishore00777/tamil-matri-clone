@@ -84,7 +84,7 @@ export default function Search() {
       <Typography
         variant="h3"
         align="center"
-        sx={{ fontWeight: "700", fontSize: "25px" }}
+        sx={{ fontWeight: "700", fontSize: "25px", marginTop: 10 }}
       >
         Start your search for a perfect match at Tamil Matrimony
       </Typography>
