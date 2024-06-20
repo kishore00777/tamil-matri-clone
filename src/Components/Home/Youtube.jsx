@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Youtube() {
   return (
-    <Box sx={{ bgcolor: "#FDFCE7", height: "70vh", pb: 5 }}>
+    <Box sx={{ bgcolor: "#FDFCE7", pb: 10 }}>
       <Typography
         variant="h3"
         align="center"

@@ -8,11 +8,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-<<<<<<< Updated upstream
-          <Route path="religion" element={<MainPage />} />
-=======
           <Route path="religion" element={<Religion />} />
->>>>>>> Stashed changes
         </Routes>
       </Router>
     </>
