@@ -1,9 +1,9 @@
-import Cimage1 from './Assets/Home/C-img-1.png';
-import Cimage2 from './Assets/Home/C-img-2.png';
-import Cimage3 from './Assets/Home/C-img-3.png';
-import Cimage4 from './Assets/Home/C-img-4.png';
-import Cimage5 from './Assets/Home/C-img-5.png';
-import Cimage6 from './Assets/Home/C-img-6.png';
+import Cimage1 from "./Assets/Home/C-img-1.png";
+import Cimage2 from "./Assets/Home/C-img-2.png";
+import Cimage3 from "./Assets/Home/C-img-3.png";
+import Cimage4 from "./Assets/Home/C-img-4.png";
+import Cimage5 from "./Assets/Home/C-img-5.png";
+import Cimage6 from "./Assets/Home/C-img-6.png";
 export const ProfileDetails = [
   {
     id: 1,
@@ -798,30 +798,6 @@ export const MatrimonyServices = [
 ];
 
 export const Regional = [
-<<<<<<< Updated upstream
-    "Assamese Matrimony",
-    "Bengali Matrimony",
-    "Bihari Matrimony",
-    "Gujarati Matrimony",
-    "Hindi Matrimony",
-    " Kannada Matrimony",
-    " Kerala Matrimony",
-    "Marathi Matrimony",
-    "Marwadi Matrimony",
-    "Oriya Matrimony",
-    "Parsi Matrimony",
-    "Punjabi Matrimony",
-    "Rajasthani Matrimony",
-    "Sindhi Matrimony",
-    "Tamil Matrimony",
-    "Telugu Matrimony",
-    "Urdu Matrimony",
-  ];
-
-  export const SliderImg = [
-    Cimage1,Cimage2, Cimage3, Cimage4, Cimage5, Cimage6
-  ]
-=======
   "Assamese Matrimony",
   "Bengali Matrimony",
   "Bihari Matrimony",
@@ -840,4 +816,5 @@ export const Regional = [
   "Telugu Matrimony",
   "Urdu Matrimony",
 ];
->>>>>>> Stashed changes
+
+export const SliderImg = [Cimage1, Cimage2, Cimage3, Cimage4, Cimage5, Cimage6];
