@@ -1,84 +1,20 @@
 import { Button, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { SearchData } from "../../Data";
+import { useNavigate } from "react-router-dom";
 
 export default function Search() {
-  const cate = [
-    { name: "Religion", value: 0, items: ["Hindu", "Muslim", "christian"] },
-    {
-      name: "Caste",
-      value: 1,
-      items: [
-        "Adi Dravida",
-        "Vannia Kula Kshatriyar",
-        "Nadar",
-        "Devar",
-        "SC",
-        "Agamudayar",
-        "Vishwakarma",
-        "Yadav",
-        "Mudaliyar",
-      ],
-    },
-    {
-      name: "City",
-      value: 2,
-      items: [
-        "Chennai",
-        "Coimbatore",
-        "Bangalore",
-        "Madurai",
-        "Salem",
-        "Tiruchirappalli",
-        "Erode",
-        "Tiruppur",
-      ],
-    },
-    {
-      name: "State",
-      value: 3,
-      items: [
-        "Tamil Nadu",
-        "Karnataka",
-        "Pondicherry",
-        "Kerala",
-        "Maharashtra",
-        "Andhra Pradesh",
-        "Delhi",
-        "Andaman & Nicobar",
-      ],
-    },
-    {
-      name: "Country",
-      value: 4,
-      items: [
-        "NRI",
-        "Malaysia",
-        "UAE",
-        "Singapore",
-        "USA",
-        "Sri Lanka",
-        "Saudi Arabia",
-        "Kuwait",
-      ],
-    },
-    {
-      name: "Occupation",
-      value: 5,
-      items: [
-        "Business Owner",
-        "Supervisor",
-        "Software Professional",
-        "Executive",
-        "Manager",
-        "Officer",
-        "Technician",
-        "Engineer - Non IT",
-        "Teaching",
-        "Agriculture Professional",
-      ],
-    },
-  ];
   const [val, setVal] = useState(0);
+  const navigate = useNavigate();
+
+  const handlePush = (category, value) => {
+    value === 0 && navigate(`/matrimony?religion=${category}`);
+    value === 1 && navigate(`/matrimony?Caste=${category}`);
+    value === 2 && navigate(`/matrimony?City=${category}`);
+    value === 3 && navigate(`/matrimony?State=${category}`);
+    value === 4 && navigate(`/matrimony?Country=${category}`);
+    value === 5 && navigate(`/matrimony?Occupation=${category}`);
+  };
   return (
     <>
       <Typography
@@ -106,7 +42,7 @@ export default function Search() {
           Browse Matrimonial Profiles By
         </Typography>
         <Grid sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
-          {cate.map((i, index) => (
+          {SearchData.map((i, index) => (
             <Grid>
               <Button
                 variant="h5"
@@ -158,7 +94,7 @@ export default function Search() {
             marginLeft: "auto",
           }}
         >
-          {cate[val].items.map((i) => (
+          {SearchData[val].items.map((i) => (
             <Button
               variant="outlined"
               sx={{
@@ -169,6 +105,9 @@ export default function Search() {
                 minWidth: "auto",
                 p: "2px 25px",
                 margin: "15px",
+              }}
+              onClick={() => {
+                handlePush(i, val);
               }}
             >
               {i}

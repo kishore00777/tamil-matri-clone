@@ -19,7 +19,7 @@ export default function Youtube() {
           width: "80%",
           height: "100vh",
           top: "15%",
-          left: "10%",
+          left: "20%",
           zIndex: 1,
         }}
       ></Box>
