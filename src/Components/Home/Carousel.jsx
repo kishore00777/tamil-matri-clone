@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { SliderImg, carouselData } from "../../Data";
 
 export default function Carousels() {
@@ -36,9 +36,9 @@ export default function Carousels() {
           borderTop: focusedIndex === i ? "3px solid orange" : "none",
           borderBottom: focusedIndex === i ? "3px solid orange" : "none",
           borderRight: focusedIndex === i ? "3px solid #fff" : "none",
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <img
@@ -70,7 +70,10 @@ export default function Carousels() {
                 <Grid container sx={{ justifyContent: "space-between" }}>
                   <Grid xs={6}>
                     <Typography>"{datas.review}"</Typography>
-                    <Typography variant="h5" sx={{ fontWeight: "bold",marginTop: 4 }}>
+                    <Typography
+                      variant="h5"
+                      sx={{ fontWeight: "bold", marginTop: 4 }}
+                    >
                       {datas.name}
                     </Typography>
                     <Typography variant="h5">TamilMatrimony</Typography>

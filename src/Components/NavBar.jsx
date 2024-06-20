@@ -18,13 +18,12 @@ import {
   Tooltip,
   Menu,
   MenuItem,
-  Avatar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import logo from "../Assets/Religion/tamilmatrimony-logo.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import PhoneCallbackIcon from '@mui/icons-material/PhoneCallback';
+import PhoneCallbackIcon from "@mui/icons-material/PhoneCallback";
 import { useLocation } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -161,8 +160,10 @@ const NavBar = () => {
                     <HelpOutlineIcon sx={{ color: "#7c7c7c" }} />
                   </IconButton>
                 </Box>
-                <Box sx={{display: 'flex'}}>
-                  <Typography sx={{ color: "black", margin: 'auto' }}>Help</Typography>
+                <Box sx={{ display: "flex" }}>
+                  <Typography sx={{ color: "black", margin: "auto" }}>
+                    Help
+                  </Typography>
                   <Tooltip title="Account settings">
                     <IconButton
                       onClick={handleClick}
@@ -187,7 +188,7 @@ const NavBar = () => {
                       sx: {
                         overflow: "visible",
                         filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                        backgroundColor: '#f1f1f1',
+                        backgroundColor: "#f1f1f1",
                         mt: 1.5,
                         "& .MuiAvatar-root": {
                           width: 32,
@@ -213,8 +214,8 @@ const NavBar = () => {
                     anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
                   >
                     <MenuItem onClick={handleClose}>
-                      <PhoneCallbackIcon sx={{mr: 1}}/> 
-                      24x7 HELP :<br/>
+                      <PhoneCallbackIcon sx={{ mr: 1 }} />
+                      24x7 HELP :<br />
                       INDIA : 0-8144-99-88-77
                     </MenuItem>
                   </Menu>

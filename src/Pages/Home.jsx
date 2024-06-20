@@ -1,5 +1,4 @@
 import React from "react";
-import MyAppBar from "../Components/MyAppBar";
 import Top from "../Components/Home/Top";
 import Interset from "../Components/Home/Interset";
 import Youtube from "../Components/Home/Youtube";
@@ -12,7 +11,6 @@ import NavBar from "../Components/NavBar";
 export default function Home() {
   return (
     <>
-      {/* <MyAppBar /> */}
       <NavBar />
       <br />
       <br />
