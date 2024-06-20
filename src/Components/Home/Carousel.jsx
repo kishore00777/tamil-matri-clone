@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
-import ProfileImage from "../../Assets/Religion/Profile.png";
-import Imgs from "../../Assets/Religion/call-icon.png";
 import { SliderImg, carouselData } from "../../Data";
 
 export default function Carousels() {
   const [focusedIndex, setFocusedIndex] = useState(0);
   const settings = {
     dots: true,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,

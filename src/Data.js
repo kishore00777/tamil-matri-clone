@@ -16,6 +16,7 @@ import KrishnaMythili from './Assets/Home/krishna-and-mythili-aug-2023.png'
 export const ProfileDetails = [
   {
     id: 1,
+    Name: "",
     Age: "25",
     Height: "5'7\"",
     Language: "English",
@@ -24,8 +25,11 @@ export const ProfileDetails = [
     City: "Chennai",
     State: "Tamil Nadu",
     country: "India",
+    Education: "",
     occupation: "Engineer",
+    MaritalStatus: "",
     Address: "123 Street, Chennai, Tamil Nadu, India",
+    MobileNo: ""
   },
   {
     id: 2,

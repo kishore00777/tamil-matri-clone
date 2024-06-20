@@ -35,7 +35,7 @@ const ProfileList = () => {
             border: "1px solid #e1dbdb",
           }}
         >
-          Tamil Birds
+          Tamil Brides
         </Typography>
       </Grid>
       <Grid sx={{ mt: 4 }}>
