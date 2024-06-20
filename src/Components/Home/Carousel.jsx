@@ -43,9 +43,7 @@ export default function Carousels() {
                     seeing the advertisements for Tamil Matrimony, she created
                     her profile on the portal. One day, she stumbled upon...
                   </Typography>
-                  <Button size="large" sx={{ color: "#ed6402" }}>
-                    Read More
-                  </Button>
+                  
                   <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                     Bhuvana & Jeganrajan
                   </Typography>

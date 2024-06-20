@@ -1,9 +1,28 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
+import YoutubeBg from "../../Assets/Home/Youtube-background.png";
 
 export default function Youtube() {
   return (
-    <Box sx={{ bgcolor: "#FDFCE7", pb: 10 }}>
+    <Box
+      sx={{
+        bgcolor: "#FDFCE7",
+        pb: 10,
+        position: "relative",
+      }}
+    >
+      <Box
+        sx={{
+          position: "absolute",
+          backgroundImage: `url(${YoutubeBg})`,
+          backgroundRepeat: "no-repeat",
+          width: "80%",
+          height: "100vh",
+          top: "15%",
+          left: "10%",
+          zIndex: 1,
+        }}
+      ></Box>
       <Typography
         variant="h3"
         align="center"
@@ -28,6 +47,7 @@ export default function Youtube() {
             overflow: "hidden",
             borderRadius: "10px",
             padding: 10,
+            zIndex: 2,
           }}
           scrolling="no"
         />

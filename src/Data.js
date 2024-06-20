@@ -818,3 +818,11 @@ export const Regional = [
 ];
 
 export const SliderImg = [Cimage1, Cimage2, Cimage3, Cimage4, Cimage5, Cimage6];
+export const carouselData = [
+  { name: "", review: "", img: Cimage1, rImg: Cimage1 },
+  { name: "", review: "", img: Cimage1, rImg: Cimage1 },
+  { name: "", review: "", img: Cimage1, rImg: Cimage1 },
+  { name: "", review: "", img: Cimage1, rImg: Cimage1 },
+  { name: "", review: "", img: Cimage1, rImg: Cimage1 },
+  { name: "", review: "", img: Cimage1, rImg: Cimage1 },
+];
