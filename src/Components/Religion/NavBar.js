@@ -59,7 +59,10 @@ const NavBar = () => {
   return (
     <>
       <HideOnScroll>
-        <AppBar component="nav" sx={{ backgroundColor: "white", paddingY: 1.5}}>
+        <AppBar
+          component="nav"
+          sx={{ backgroundColor: "white", paddingY: 1.5 }}
+        >
           <Container maxWidth="lg">
             <Toolbar sx={{ justifyContent: "space-between" }}>
               <IconButton
@@ -72,9 +75,11 @@ const NavBar = () => {
                 <MenuIcon />
               </IconButton>
               <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                <Typography sx={{ color: "black", fontSize: "11px" }}>
+                  From Matrimony.com Group
+                </Typography>
                 <img src={logo} alt="" />
               </Box>
-
               <Box sx={{ display: { xs: "none", sm: "flex" }, columnGap: 3}}>
                 {navItems.map((item) => (
                   <Button

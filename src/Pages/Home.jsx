@@ -7,11 +7,13 @@ import Carousels from "../Components/Home/Carousel";
 import AboutMatirimony from "../Components/AboutMatirimony";
 import Footer from "../Components/Footer";
 import Search from "../Components/Home/Search";
+import NavBar from "../Components/Religion/NavBar";
 
 export default function Home() {
   return (
     <>
-      <MyAppBar />
+      {/* <MyAppBar /> */}
+      <NavBar />
       <br />
       <br />
       <br />
