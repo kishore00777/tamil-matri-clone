@@ -4,8 +4,14 @@ import facebook from "../Assets/fb-icon.png";
 import insta from "../Assets/instagrram-icon.png";
 import twitter from "../Assets/twitter-icon.png";
 import React from "react";
-import { Help, MatrimonyServices, OtherService, Regional, WeddingServices, information } from "../Data";
-
+import {
+  Help,
+  MatrimonyServices,
+  OtherService,
+  Regional,
+  WeddingServices,
+  information,
+} from "../Data";
 
 const style = {
   fontSize: "14px",
@@ -34,7 +40,7 @@ const Footer = () => {
           </Typography>
           <Grid>
             {Regional.map((items) => (
-              <a style={style} href="">
+              <a style={style} href="hi">
                 {items}
               </a>
             ))}
@@ -54,7 +60,7 @@ const Footer = () => {
           </Typography>
           <Grid>
             {Help.map((items) => (
-              <a style={style} href="">
+              <a style={style} href="hi">
                 {items}
               </a>
             ))}
@@ -72,7 +78,7 @@ const Footer = () => {
           </Typography>
           <Grid>
             {OtherService.map((items) => (
-              <a style={style} href="">
+              <a style={style} href="hi">
                 {items}
               </a>
             ))}
@@ -91,7 +97,7 @@ const Footer = () => {
           </Typography>
           <Grid>
             {WeddingServices.map((items) => (
-              <a style={style} href="">
+              <a style={style} href="hi">
                 {items}
               </a>
             ))}
@@ -110,7 +116,7 @@ const Footer = () => {
           </Typography>
           <Grid>
             {information.map((items) => (
-              <a style={style} href="">
+              <a style={style} href="hi">
                 {items}
               </a>
             ))}
@@ -129,7 +135,7 @@ const Footer = () => {
           </Typography>
           <Grid>
             {MatrimonyServices.map((items) => (
-              <a style={style} href="">
+              <a style={style} href="hi">
                 {items}
               </a>
             ))}

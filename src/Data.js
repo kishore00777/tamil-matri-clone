@@ -6,6 +6,7 @@ import Cimage5 from "./Assets/Home/C-img-3.png";
 import Cimage6 from "./Assets/Home/C-img-4.png";
 
 import BhuvanaJeganrajan from './Assets/Home/bhuvana-and-jeganrajan-aug-2023.png'
+
 import KowsiAravind from './Assets/Home/kowsi-and-aravind-aug-2023.png'
 import KumareshAravind from './Assets/Home/kumaresh-and-tamilarasi-aug-2023.png'
 import MaheshDeepa from './Assets/Home/mahesh-and-deepa-aug-2023.png'
