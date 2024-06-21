@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import FilterCards from "./FilterCards";
-import { List, RelationShip } from "../../../Data/Data";
+import { RelationShip } from "../../../Data/Data";
 
 const FilterList = () => {
   const [relationShip, setRelationShip] = React.useState("");
@@ -93,7 +93,7 @@ const FilterList = () => {
           </Button>
         </CardContent>
       </Card>
-      <FilterCards ListData={List} />
+      <FilterCards />
     </>
   );
 };

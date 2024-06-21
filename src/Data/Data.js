@@ -5,13 +5,13 @@ import Cimage4 from "../Assets/Home/C-img-6.png";
 import Cimage5 from "../Assets/Home/C-img-3.png";
 import Cimage6 from "../Assets/Home/C-img-4.png";
 
-import BhuvanaJeganrajan from '../Assets/Home/bhuvana-and-jeganrajan-aug-2023.png'
+import BhuvanaJeganrajan from "../Assets/Home/bhuvana-and-jeganrajan-aug-2023.png";
 
-import KowsiAravind from '../Assets/Home/kowsi-and-aravind-aug-2023.png'
-import KumareshAravind from '../Assets/Home/kumaresh-and-tamilarasi-aug-2023.png'
-import MaheshDeepa from '../Assets/Home/mahesh-and-deepa-aug-2023.png'
-import ManickamMahalakshmi from '../Assets/Home/manickam-and-mahalakshmi-aug-202.png'
-import KrishnaMythili from '../Assets/Home/krishna-and-mythili-aug-2023.png'
+import KowsiAravind from "../Assets/Home/kowsi-and-aravind-aug-2023.png";
+import KumareshAravind from "../Assets/Home/kumaresh-and-tamilarasi-aug-2023.png";
+import MaheshDeepa from "../Assets/Home/mahesh-and-deepa-aug-2023.png";
+import ManickamMahalakshmi from "../Assets/Home/manickam-and-mahalakshmi-aug-202.png";
+import KrishnaMythili from "../Assets/Home/krishna-and-mythili-aug-2023.png";
 
 export const ProfileDetails = [
   {
@@ -29,7 +29,7 @@ export const ProfileDetails = [
     occupation: "Engineer",
     MaritalStatus: "",
     Address: "123 Street, Chennai, Tamil Nadu, India",
-    MobileNo: ""
+    MobileNo: "",
   },
   {
     id: 2,
@@ -680,99 +680,6 @@ export const RelationShip = [
   "Friend",
 ];
 
-export const List = [
-  {
-    Title: "By Gender",
-    Subtitle: ["Tamil Brides", "Tamil Grooms"],
-  },
-  {
-    Title: "By Religion",
-    Subtitle: ["Hindu Matrimony", "Muslim Matrimony", "Christian Matrimony"],
-  },
-  {
-    Title: "By Caste",
-    Subtitle: [
-      "Adi Dravida Matrimony",
-      "Vanniyar Matrimony",
-      "Nadar Matrimony",
-      "Devar Matrimony",
-      "Agamudayar Matrimony",
-      "Vishwakarma Matrimony",
-      "Nadar Matrimony",
-      "Devar Matrimony",
-    ],
-  },
-  {
-    Title: "By City",
-    Subtitle: [
-      "Chennai Matrimony",
-      "Coimbatore Matrimony",
-      "Bangalore Matrimony",
-      "Madurai Matrimony",
-      "Salem Matrimony",
-      "Tiruchirappalli Matrimony",
-      "Erode Matrimony",
-      "Vellore Matrimony",
-      "Tiruppur Matrimony",
-    ],
-  },
-  {
-    Title: "By State",
-    Subtitle: [
-      "Tamil Nadu Matrimony",
-      "Karnataka Matrimony",
-      "Pondicherry Matrimony",
-      "Kerala Matrimony",
-      "Maharashtra Matrimony",
-      "Andhra Pradesh Matrimony",
-      "Delhi Matrimony",
-      "Andaman & Nicobar Matrimony",
-      "Telangana Matrimony",
-    ],
-  },
-  {
-    Title: "By Country",
-    Subtitle: [
-      "NRI Matrimony",
-      "Malaysia NRI Matrimony",
-      "UAE NRI Matrimony",
-      "Singapore NRI Matrimony",
-      "USA NRI Matrimony",
-      "Sri Lanka NRI Matrimony",
-      "Saudi Arabia NRI Matrimony",
-      "Kuwait NRI Matrimony",
-      "Qatar NRI Matrimony",
-    ],
-  },
-  {
-    Title: "By Education",
-    Subtitle: [
-      "B.E",
-      "Diploma",
-      "B.Com",
-      "B.Tech",
-      "MBA",
-      "B.Sc",
-      "B.A",
-      "BCA",
-    ],
-  },
-  {
-    Title: "By Profession",
-    Subtitle: [
-      "Business Owner",
-      "Supervisor",
-      "Software Professional",
-      "Executive",
-      "Manager",
-      "Officer",
-      "Technician",
-      "Engineer-Non IT",
-      "Teaching",
-      "Agriculture",
-    ],
-  },
-];
 export const Help = ["24x7 Live help", "Contact us", "Feedback", "FAQs"];
 
 export const OtherService = [
@@ -876,6 +783,97 @@ export const carouselData = [
   },
 ];
 
+export const List = [
+  {
+    Title: "By Gender",
+    Subtitle: ["Tamil Brides", "Tamil Grooms"],
+  },
+  {
+    Title: "By Religion",
+    Subtitle: ["Hindu", "Muslim", "Christian"],
+  },
+  {
+    Title: "By Caste",
+    Subtitle: [
+      "Adi Dravida",
+      "Vannia Kula Kshatriyar",
+      "Nadar",
+      "Devar",
+      "SC",
+      "Agamudayar",
+      "Vishwakarma",
+      "Yadav",
+      "Mudaliyar",
+    ],
+  },
+  {
+    Title: "By City",
+    Subtitle: [
+      "Chennai",
+      "Coimbatore",
+      "Bangalore",
+      "Madurai",
+      "Salem",
+      "Tiruchirappalli",
+      "Erode",
+      "Tiruppur",
+    ],
+  },
+  {
+    Title: "By State",
+    Subtitle: [
+      "Tamil Nadu",
+      "Karnataka",
+      "Pondicherry",
+      "Kerala",
+      "Maharashtra",
+      "Andhra Pradesh",
+      "Delhi",
+      "Andaman & Nicobar",
+    ],
+  },
+  {
+    Title: "By Country",
+    Subtitle: [
+      "NRI",
+      "Malaysia",
+      "UAE",
+      "Singapore",
+      "USA",
+      "Sri Lanka",
+      "Saudi Arabia",
+      "Kuwait",
+    ],
+  },
+  {
+    Title: "By Education",
+    Subtitle: [
+      "B.E",
+      "Diploma",
+      "B.Com",
+      "B.Tech",
+      "MBA",
+      "B.Sc",
+      "B.A",
+      "BCA",
+    ],
+  },
+  {
+    Title: "By Profession",
+    Subtitle: [
+      "Business Owner",
+      "Supervisor",
+      "Software Professional",
+      "Executive",
+      "Manager",
+      "Officer",
+      "Technician",
+      "Engineer - Non IT",
+      "Teaching",
+      "Agriculture Professional",
+    ],
+  },
+];
 export const BrowseData = [
   { name: "Religion", value: 0, items: ["Hindu", "Muslim", "christian"] },
   {
