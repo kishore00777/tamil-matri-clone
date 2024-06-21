@@ -18,16 +18,22 @@ import {
   Tooltip,
   Menu,
   MenuItem,
+  
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import logo from "../Assets/Religion/tamilmatrimony-logo.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import PhoneCallbackIcon from "@mui/icons-material/PhoneCallback";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["REGISTER", "SEARCH", "SERVICES", "UPGRADE"];
+const navItems = [
+  { name: "REGISTER", to: "/registerform" },
+  { name: "SEARCH", to: "/registerform" },
+  { name: "SERVICES", to: "/registerform" },
+  { name: "UPGRADE", to: "/registerform" },
+];
 
 const HideOnScroll = ({ children }) => {
   const trigger = useScrollTrigger();
@@ -41,6 +47,7 @@ const HideOnScroll = ({ children }) => {
 
 const NavBar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -60,10 +67,10 @@ const NavBar = () => {
       <img src={logo} alt="" />
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map((item, i) => (
+          <ListItem key={i} disablePadding onClick={() => navigate(item.to)}>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -100,17 +107,20 @@ const NavBar = () => {
                 />
               </Box>
               <Box sx={{ display: { xs: "none", sm: "flex" }, columnGap: 3 }}>
-                {navItems.map((item) => (
-                  <Button
-                    key={item}
-                    sx={{
+                {navItems.map((item, i) => (
+                  <Link
+                    key={i}
+                    to={item.to}
+                    style={{
+                      cursor:'pointer',
+                      textDecoration: 'none',
                       color: "#212529",
                       fontSize: "16PX",
                       visibility: location.pathname === "/" ? "hidden" : "none",
                     }}
                   >
-                    {item}
-                  </Button>
+                    <Typography>{item.name}</Typography>
+                  </Link>
                 ))}
               </Box>
               <Box sx={{ display: "flex", alignItems: "center" }}>
