@@ -876,7 +876,7 @@ export const carouselData = [
   },
 ];
 
-export const SearchData = [
+export const BrowseData = [
   { name: "Religion", value: 0, items: ["Hindu", "Muslim", "christian"] },
   {
     name: "Caste",

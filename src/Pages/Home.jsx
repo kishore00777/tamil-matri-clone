@@ -5,8 +5,9 @@ import Youtube from "../Components/Home/Youtube";
 import Carousels from "../Components/Home/Carousel";
 import AboutMatirimony from "../Components/AboutMatirimony";
 import Footer from "../Components/Footer";
-import Search from "../Components/Home/Search";
 import NavBar from "../Components/NavBar";
+import Browse from "../Components/Home/Browse";
+import Search from "../Components/Home/Search";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Youtube />
         <Carousels />
         <Search />
+        <Browse />
         <AboutMatirimony />
         <Footer />
       </>
