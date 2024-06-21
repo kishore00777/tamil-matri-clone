@@ -7,7 +7,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import Profile from "../../../Assets/Religion/Profile.png";
 import CallIcon from "../../../Assets/Religion/call-icon.png";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
@@ -33,7 +33,10 @@ const ProfileList = () => {
       list.country === Country ||
       list.occupation === Occupation
   );
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  
   return (
     <>
       <Grid>
