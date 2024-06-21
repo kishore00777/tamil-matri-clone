@@ -1,17 +1,17 @@
-import Cimage1 from "./Assets/Home/C-img-1.png";
-import Cimage2 from "./Assets/Home/C-img-2.png";
-import Cimage3 from "./Assets/Home/C-img-5.png";
-import Cimage4 from "./Assets/Home/C-img-6.png";
-import Cimage5 from "./Assets/Home/C-img-3.png";
-import Cimage6 from "./Assets/Home/C-img-4.png";
+import Cimage1 from "../Assets/Home/C-img-1.png";
+import Cimage2 from "../Assets/Home/C-img-2.png";
+import Cimage3 from "../Assets/Home/C-img-5.png";
+import Cimage4 from "../Assets/Home/C-img-6.png";
+import Cimage5 from "../Assets/Home/C-img-3.png";
+import Cimage6 from "../Assets/Home/C-img-4.png";
 
-import BhuvanaJeganrajan from './Assets/Home/bhuvana-and-jeganrajan-aug-2023.png'
+import BhuvanaJeganrajan from '../Assets/Home/bhuvana-and-jeganrajan-aug-2023.png'
 
-import KowsiAravind from './Assets/Home/kowsi-and-aravind-aug-2023.png'
-import KumareshAravind from './Assets/Home/kumaresh-and-tamilarasi-aug-2023.png'
-import MaheshDeepa from './Assets/Home/mahesh-and-deepa-aug-2023.png'
-import ManickamMahalakshmi from './Assets/Home/manickam-and-mahalakshmi-aug-202.png'
-import KrishnaMythili from './Assets/Home/krishna-and-mythili-aug-2023.png'
+import KowsiAravind from '../Assets/Home/kowsi-and-aravind-aug-2023.png'
+import KumareshAravind from '../Assets/Home/kumaresh-and-tamilarasi-aug-2023.png'
+import MaheshDeepa from '../Assets/Home/mahesh-and-deepa-aug-2023.png'
+import ManickamMahalakshmi from '../Assets/Home/manickam-and-mahalakshmi-aug-202.png'
+import KrishnaMythili from '../Assets/Home/krishna-and-mythili-aug-2023.png'
 
 export const ProfileDetails = [
   {

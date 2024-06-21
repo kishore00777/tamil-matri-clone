@@ -11,7 +11,7 @@ import {
   Regional,
   WeddingServices,
   information,
-} from "../Data";
+} from "../Data/Data";
 
 const style = {
   fontSize: "14px",

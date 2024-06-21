@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { SliderImg, carouselData } from "../../Data";
+import { SliderImg, carouselData } from "../../Data/Data";
 
 export default function Carousels() {
   const [focusedIndex, setFocusedIndex] = useState(0);
@@ -48,8 +48,8 @@ export default function Carousels() {
             width: "50px",
             height: "50px",
           }}
-          onFocus={() => setFocusedIndex(i)}
-          onBlur={() => setFocusedIndex(null)}
+          onClick={() => setFocusedIndex(i)}
+          // onBlur={() => setFocusedIndex(null)}
           tabIndex={0}
         />
       </div>
