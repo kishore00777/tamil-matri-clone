@@ -18,7 +18,6 @@ import {
   Tooltip,
   Menu,
   MenuItem,
-  
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
@@ -26,14 +25,9 @@ import logo from "../Assets/Religion/tamilmatrimony-logo.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import PhoneCallbackIcon from "@mui/icons-material/PhoneCallback";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { navItems } from "../Data/Data";
 
 const drawerWidth = 240;
-const navItems = [
-  { name: "REGISTER", to: "/registerform" },
-  { name: "SEARCH", to: "/registerform" },
-  { name: "SERVICES", to: "/registerform" },
-  { name: "UPGRADE", to: "/registerform" },
-];
 
 const HideOnScroll = ({ children }) => {
   const trigger = useScrollTrigger();
@@ -101,13 +95,14 @@ const NavBar = () => {
                   From Matrimony.com Group
                 </Typography>
                 <Link to={"/"}>
-                <img
-                  style={{ width: location.pathname === "/" ? "90%" : "100%" }}
-                  src={logo}
-                  alt=""
-                />
+                  <img
+                    style={{
+                      width: location.pathname === "/" ? "90%" : "100%",
+                    }}
+                    src={logo}
+                    alt=""
+                  />
                 </Link>
-                
               </Box>
               <Box sx={{ display: { xs: "none", sm: "flex" }, columnGap: 3 }}>
                 {navItems.map((item, i) => (
@@ -115,8 +110,8 @@ const NavBar = () => {
                     key={i}
                     to={item.to}
                     style={{
-                      cursor:'pointer',
-                      textDecoration: 'none',
+                      cursor: "pointer",
+                      textDecoration: "none",
                       color: "#212529",
                       fontSize: "16PX",
                       visibility: location.pathname === "/" ? "hidden" : "none",
@@ -152,26 +147,26 @@ const NavBar = () => {
                   Already a member?
                 </Typography>
                 <Box sx={{ marginLeft: 1 }}>
-                  <Link to={'/login'}>
-                  <Button
-                    variant="outlined"
-                    size="small"
-                    sx={{
-                      color: "#ff9902",
-                      fontWeight: 500,
-                      borderColor: "#ff9902",
-                      paddingX: 3.5,
-                      borderRadius: "11px",
-                      "&:hover": {
+                  <Link to={"/login"}>
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      sx={{
+                        color: "#ff9902",
+                        fontWeight: 500,
                         borderColor: "#ff9902",
-                        backgroundColor: "transparent",
-                      },
-                    }}
-                  >
-                    Login
-                  </Button>
+                        paddingX: 3.5,
+                        borderRadius: "11px",
+                        "&:hover": {
+                          borderColor: "#ff9902",
+                          backgroundColor: "transparent",
+                        },
+                      }}
+                    >
+                      Login
+                    </Button>
                   </Link>
-                  
+
                   <IconButton>
                     <HelpOutlineIcon sx={{ color: "#7c7c7c" }} />
                   </IconButton>

@@ -63,7 +63,7 @@ import ImageF30 from "../Assets/ProfilePhoto/Female/Img-30.png";
 export const profiles = [
   {
     id: 1,
-    Name: "Vinith",
+    Name: "Suresh",
     Age: "25",
     Height: "5'7\"",
     Language: "Tamil",
@@ -79,7 +79,7 @@ export const profiles = [
     MobileNo: "1234567890",
     Gender: "Male",
     cate: "Tamil Grooms",
-    ProfileImage: ImageM1,
+    ProfileImage: ImageM15,
   },
   {
     id: 2,

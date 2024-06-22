@@ -13,6 +13,13 @@ import MaheshDeepa from "../Assets/Home/mahesh-and-deepa-aug-2023.png";
 import ManickamMahalakshmi from "../Assets/Home/manickam-and-mahalakshmi-aug-202.png";
 import KrishnaMythili from "../Assets/Home/krishna-and-mythili-aug-2023.png";
 
+export const navItems = [
+  { name: "REGISTER", to: "/registerform" },
+  { name: "SEARCH", to: "/registerform" },
+  { name: "SERVICES", to: "/registerform" },
+  { name: "UPGRADE", to: "/registerform" },
+];
+
 export const RelationShip = [
   "Myself",
   "Daughter",

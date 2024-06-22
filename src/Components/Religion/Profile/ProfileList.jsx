@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardContent,
@@ -122,18 +123,21 @@ const ProfileList = () => {
                                   objectFit: "cover",
                                 }}
                                 src={list.ProfileImage}
-                                alt=""
+                                alt="imag"
                               />
-                              <img
+                              <Box
                                 style={{
                                   display: "block",
                                   position: "absolute",
                                   left: "70%",
                                   top: "70%",
+                                  zIndex: 2,
+                                  cursor: "pointer",
                                 }}
-                                src={CallIcon}
-                                alt=""
-                              />
+                                onClick={() => navigate("/registerform")}
+                              >
+                                <img src={CallIcon} alt="call icon" />
+                              </Box>
                             </Grid>
                           </Grid>
                           <Grid xs={12} md={8} sx={{ textAlign: "left" }}>
