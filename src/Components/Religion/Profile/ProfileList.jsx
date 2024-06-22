@@ -214,6 +214,7 @@ const ProfileList = () => {
                                     backgroundColor: "#fe9607",
                                   },
                                 }}
+                                onClick={() => navigate("/registerform")}
                               >
                                 REGISTER FREE
                               </Button>

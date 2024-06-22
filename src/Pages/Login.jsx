@@ -10,7 +10,6 @@ import {
   Grid,
   IconButton,
   InputAdornment,
-  InputLabel,
   OutlinedInput,
   TextField,
   Typography,
