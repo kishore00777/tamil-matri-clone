@@ -8,12 +8,14 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect } from "react";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CallIcon from "../../../Assets/Religion/call-icon.png";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { profiles } from "../../../Data/Profiles";
 
 const ProfileList = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const Gender = params.get("gender");
@@ -24,6 +26,7 @@ const ProfileList = () => {
   const Country = params.get("Country");
   const Occupation = params.get("Occupation");
   const Education = params.get("education");
+  const viewMore = params.get("viewmore");
 
   const filtFemale = profiles.filter(
     (list) =>
@@ -49,7 +52,12 @@ const ProfileList = () => {
         list.Education === Education ||
         list.occupation === Occupation)
   );
+
   const AnyOne = location.search;
+
+  const handleView = (e) => {
+    navigate(`/matrimony${AnyOne}&viewmore=${e}`);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,7 +65,7 @@ const ProfileList = () => {
 
   return (
     <>
-      {AnyOne === "?gender=Tamil%20Grooms" ? null : (
+      {AnyOne === "?gender=Tamil%20Grooms" || viewMore === "grooms" ? null : (
         <>
           <Grid>
             <Typography
@@ -82,7 +90,7 @@ const ProfileList = () => {
                 No Profile Found!!
               </Typography>
             ) : (
-              filtFemale.map(
+              filtFemale?.slice(0, viewMore === "brides" ? 11111 : 5).map(
                 (list) =>
                   list.Gender === "Female" && (
                     <Card
@@ -133,10 +141,14 @@ const ProfileList = () => {
                               {list?.Age}yrs, {list?.Height}, {list?.Language}
                             </Typography>
                             {/* <Typography>{list?.FatherName}</Typography> */}
+                            <Typography sx={{ fontWeight: "600" }}>
+                              {list?.caste},&nbsp;{list?.Religion}
+                            </Typography>
                             <Typography
                               sx={{ marginBottom: 1, fontWeight: "600" }}
                             >
-                              {list?.Address}
+                              {list?.Education}&nbsp;/&nbsp;{list?.occupation}
+                              &nbsp;{list?.Address}
                             </Typography>
                             <a
                               style={{
@@ -213,6 +225,22 @@ const ProfileList = () => {
                   )
               )
             )}
+            {viewMore === "brides"
+              ? null
+              : filtFemale.length > 5 && (
+                  <Typography
+                    align="right"
+                    sx={{
+                      cursor: "pointer",
+                      fontWeight: "600",
+                      color: "orange",
+                    }}
+                    onClick={() => handleView("brides")}
+                  >
+                    View More
+                    <ArrowForwardIosIcon sx={{ fontSize: "12px" }} />{" "}
+                  </Typography>
+                )}
             {/* <Stack spacing={2}>
           <Pagination
             sx={{ display: "flex", justifyContent: "end" }}
@@ -232,7 +260,7 @@ const ProfileList = () => {
       <br />
       <br />
       <br />
-      {AnyOne === "?gender=Tamil%20Brides" ? null : (
+      {AnyOne === "?gender=Tamil%20Brides" || viewMore === "brides" ? null : (
         <>
           <Grid>
             <Typography
@@ -257,7 +285,7 @@ const ProfileList = () => {
                 No Profile Found!!
               </Typography>
             ) : (
-              filtMale.map(
+              filtMale.slice(0, viewMore === "grooms" ? 111111 : 5).map(
                 (list) =>
                   list.Gender === "Male" && (
                     <Card
@@ -308,10 +336,14 @@ const ProfileList = () => {
                               {list?.Age}yrs, {list?.Height}, {list?.Language}
                             </Typography>
                             {/* <Typography sx={{fontWeight:'600'}}>{list?.FatherName}</Typography> */}
+                            <Typography sx={{ fontWeight: "600" }}>
+                              {list?.caste},&nbsp;{list?.Religion}
+                            </Typography>
                             <Typography
                               sx={{ marginBottom: 1, fontWeight: "600" }}
                             >
-                              {list?.Address}
+                              {list?.Education}&nbsp;/&nbsp;{list?.occupation}
+                              &nbsp;{list?.Address}
                             </Typography>
                             <a
                               style={{
@@ -388,6 +420,22 @@ const ProfileList = () => {
                   )
               )
             )}
+            {viewMore === "grooms"
+              ? null
+              : filtMale.length > 5 && (
+                  <Typography
+                    align="right"
+                    sx={{
+                      cursor: "pointer",
+                      fontWeight: "600",
+                      color: "orange",
+                    }}
+                    onClick={() => handleView("grooms")}
+                  >
+                    View More
+                    <ArrowForwardIosIcon sx={{ fontSize: "12px" }} />{" "}
+                  </Typography>
+                )}
             {/* <Stack spacing={2}>
           <Pagination
             sx={{ display: "flex", justifyContent: "end" }}
