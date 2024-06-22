@@ -149,6 +149,7 @@ const NavBar = () => {
                   Already a member?
                 </Typography>
                 <Box sx={{ marginLeft: 1 }}>
+                  <Link to={'/login'}>
                   <Button
                     variant="outlined"
                     size="small"
@@ -166,6 +167,8 @@ const NavBar = () => {
                   >
                     Login
                   </Button>
+                  </Link>
+                  
                   <IconButton>
                     <HelpOutlineIcon sx={{ color: "#7c7c7c" }} />
                   </IconButton>
