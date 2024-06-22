@@ -4,7 +4,6 @@ import {
   Container,
   FormControl,
   Grid,
-  Input,
   MenuItem,
   OutlinedInput,
   Select,
@@ -41,7 +40,6 @@ const names = [
 ];
 
 export const Register = () => {
-  // const theme = useTheme();
   const [personName, setPersonName] = React.useState();
 
   const handleChange = (event) => {
@@ -68,7 +66,9 @@ export const Register = () => {
               >
                 From Matrimony.com Group
               </Typography>
-              <img src={Logo} alt="" />
+              <Link to={"/"}>
+                <img src={Logo} alt="" />
+              </Link>
               <Typography
                 sx={{
                   fontSize: "36px",
@@ -92,7 +92,6 @@ export const Register = () => {
                 container
                 sx={{
                   backgroundColor: "white",
-                  // width: "78%",
                   justifyContent: "space-between",
                   borderRadius: "14px",
                   marginTop: 3,
@@ -119,9 +118,9 @@ export const Register = () => {
                         onChange={handleChange}
                         input={<OutlinedInput />}
                         renderValue={(selected) => {
-                        //   if (selected.length === 0) {
-                        //     return <em>Select Profile</em>;
-                        //   }
+                            // if (selected.length === 0) {
+                            //   return <em>Select Profile</em>;
+                            // }
                         }}
                         MenuProps={MenuProps}
                         inputProps={{ "aria-label": "Without label" }}
@@ -130,7 +129,6 @@ export const Register = () => {
                           <MenuItem
                             key={name}
                             value={name}
-                            //   style={getStyles(name, personName, theme)}
                           >
                             {name}
                           </MenuItem>
@@ -187,7 +185,6 @@ export const Register = () => {
                       color: "#ffff",
                       backgroundColor: "#f88919",
                       height: "100%",
-                      borderRadius: 0,
                       paddingX: 4,
                       borderRadius: "0px 14px 14px 0px",
                     }}
@@ -238,12 +235,14 @@ export const Register = () => {
           </Container>
         </Box>
       </Box>
-      <Box sx={{padding: '18px 0px 23px 0px'}}>
-        <Typography sx={{fontSize: '13px', textAlign: 'center'}}>
+      <Box sx={{ padding: "18px 0px 23px 0px" }}>
+        <Typography sx={{ fontSize: "13px", textAlign: "center" }}>
           This website is strictly for matrimonial purpose only and not a dating
           website.
         </Typography>
-        <Typography sx={{fontSize: '13px', textAlign: 'center'}}>Copyright © 2024. All rights reserved.</Typography>
+        <Typography sx={{ fontSize: "13px", textAlign: "center" }}>
+          Copyright © 2024. All rights reserved.
+        </Typography>
       </Box>
     </>
   );

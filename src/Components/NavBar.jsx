@@ -100,11 +100,14 @@ const NavBar = () => {
                 <Typography sx={{ color: "black", fontSize: "11px" }}>
                   From Matrimony.com Group
                 </Typography>
+                <Link to={"/"}>
                 <img
                   style={{ width: location.pathname === "/" ? "90%" : "100%" }}
                   src={logo}
                   alt=""
                 />
+                </Link>
+                
               </Box>
               <Box sx={{ display: { xs: "none", sm: "flex" }, columnGap: 3 }}>
                 {navItems.map((item, i) => (

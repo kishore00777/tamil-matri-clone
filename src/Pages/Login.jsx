@@ -30,8 +30,10 @@ import AboutMatirimony from "../Components/AboutMatirimony";
 import Footer from "../Components/Footer";
 
 const Styles = {
-    color: "#000000", textWrap: "wrap", fontSize: "16px"
-}
+  color: "#000000",
+  textWrap: "wrap",
+  fontSize: "16px",
+};
 
 const Login = () => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -51,7 +53,9 @@ const Login = () => {
             >
               From Matrimony.com Group
             </Typography>
-            <img src={Logo} alt="" />
+            <Link to={"/"}>
+              <img src={Logo} alt="" />
+            </Link>
           </Grid>
         </Grid>
       </Container>
@@ -205,7 +209,7 @@ const Login = () => {
                   </Grid>
                   <Grid>
                     <Link
-                    to={'/registerform'}
+                      to={"/registerform"}
                       style={{
                         fontSize: "20px",
                         color: "#ed6402",
@@ -219,18 +223,18 @@ const Login = () => {
                 </Grid>
               </Card>
               <Card sx={{ borderRadius: "12px", marginY: 1 }}>
-                <Grid sx={{padding: "15px",}}>
+                <Grid sx={{ padding: "15px" }}>
                   <Grid
                     sx={{
                       display: "flex",
                       alignItems: "center",
                       columnGap: 1,
-                      borderRadius: '10px',
+                      borderRadius: "10px",
                       border: "1px solid #363636",
                       padding: "5px 15px 0px 15px",
                     }}
                   >
-                    <Grid sx={{display: 'flex'}}>
+                    <Grid sx={{ display: "flex" }}>
                       <img src={MobileImage} alt="" />
                     </Grid>
                     <Grid>
@@ -262,43 +266,34 @@ const Login = () => {
         </Container>
       </Box>
       <Box sx={{ backgroundColor: "#f6f6f6", marginBottom: 1 }}>
-          <Container maxWidth="lg">
-            <Grid
-              container
-              sx={{ justifyContent: "space-around", paddingY: 2 }}
-            >
-              <Grid xs={12} md={4} sx={{ display: "flex", columnGap: 2.8 }}>
-                <img src={Image1} alt="" />
-                <Typography
-                  sx={Styles}
-                >
-                  Contact genuine profiles with 100% verified mobile numbers
-                </Typography>
-              </Grid>
-              <Grid xs={12} md={4} sx={{ display: "flex", columnGap: 2.8 }}>
-                <img src={Image2} alt="" />
-                <Typography
-                  sx={Styles}
-                >
-                  Highest number of documented marriages online - Limca Book of
-                  Records
-                </Typography>
-                {/* <Typography sx={{fontSize: '12px'}}>- Limca Book of Records</Typography> */}
-              </Grid>
-              <Grid xs={12} md={4} sx={{ display: "flex", columnGap: 2.8 }}>
-                <img src={Image3} alt="" />
-                <Typography
-                  sx={Styles}
-                >
-                  The most trusted matrimony brand - The Brand Trust Report
-                </Typography>
-                {/* <Typography sx={{fontSize: '12px'}}>- The Brand Trust Report</Typography> */}
-              </Grid>
+        <Container maxWidth="lg">
+          <Grid container sx={{ justifyContent: "space-around", paddingY: 2 }}>
+            <Grid xs={12} md={4} sx={{ display: "flex", columnGap: 2.8 }}>
+              <img src={Image1} alt="" />
+              <Typography sx={Styles}>
+                Contact genuine profiles with 100% verified mobile numbers
+              </Typography>
             </Grid>
-          </Container>
-        </Box>
-        <AboutMatirimony />
-        <Footer />
+            <Grid xs={12} md={4} sx={{ display: "flex", columnGap: 2.8 }}>
+              <img src={Image2} alt="" />
+              <Typography sx={Styles}>
+                Highest number of documented marriages online - Limca Book of
+                Records
+              </Typography>
+              {/* <Typography sx={{fontSize: '12px'}}>- Limca Book of Records</Typography> */}
+            </Grid>
+            <Grid xs={12} md={4} sx={{ display: "flex", columnGap: 2.8 }}>
+              <img src={Image3} alt="" />
+              <Typography sx={Styles}>
+                The most trusted matrimony brand - The Brand Trust Report
+              </Typography>
+              {/* <Typography sx={{fontSize: '12px'}}>- The Brand Trust Report</Typography> */}
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+      <AboutMatirimony />
+      <Footer />
     </>
   );
 };
