@@ -23,7 +23,6 @@ import {
   Countrys,
   Education,
   Heights,
-  Regional,
   Religion,
   State,
 } from "../Data/Data";
@@ -48,22 +47,6 @@ const Search = () => {
   const [city, setCity] = React.useState("");
   const [education, setEducation] = React.useState("");
 
-  console.log(
-    gender,
-    fromAge,
-    toAge,
-    fromHeight,
-    toHeight,
-    maritalStatus,
-    religion,
-    tongue,
-    caste,
-    country,
-    state,
-    city,
-    education
-  );
-
   const handleChangeGender = (event) => {
     setGender(event.target.value);
   };
@@ -83,69 +66,28 @@ const Search = () => {
     setMaritalStatus(event.target.value);
   };
 
-  const handleChangeReligion = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setReligion(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+  const handleChangeReligion = (e) => {
+    setReligion(e.target.value);
   };
-  const handleChangeTonge = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setTongue(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+  const handleChangeTonge = (e) => {
+    setTongue(e.target.value);
   };
-  const handleChangeCaste = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setCaste(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+  const handleChangeCaste = (e) => {
+    setCaste(e.target.value);
   };
-  const handleChangeCountry = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setCountry(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+  const handleChangeCountry = (e) => {
+    setCountry(e.target.value);
   };
-  const handleChangeState = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setState(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+  const handleChangeState = (e) => {
+    setState(e.target.value);
   };
-  const handleChangeCity = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setCity(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+  const handleChangeCity = (e) => {
+    setCity(e.target.value);
   };
-  const handleChangeEducation = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setEducation(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+  const handleChangeEducation = (e) => {
+    setEducation(e.target.value);
   };
+
   return (
     <>
       <NavBar />
@@ -212,6 +154,7 @@ const Search = () => {
                       onChange={handleChangeFromAge}
                       input={<OutlinedInput label="FromAge" />}
                     >
+                      <MenuItem value="any">Any</MenuItem>
                       {AgeFrom.map((list) => (
                         <MenuItem value={list}>{list}</MenuItem>
                       ))}
@@ -228,6 +171,7 @@ const Search = () => {
                       onChange={handleChangeToAge}
                       input={<OutlinedInput label="ToAge" />}
                     >
+                      <MenuItem value="any">Any</MenuItem>
                       {AgeTo.map((list) => (
                         <MenuItem value={list}>{list}</MenuItem>
                       ))}
@@ -261,6 +205,7 @@ const Search = () => {
                       onChange={handleChangeFromHeight}
                       input={<OutlinedInput label="FromHeight" />}
                     >
+                      <MenuItem value="any">Any</MenuItem>
                       {Heights.map((list, i) => (
                         <MenuItem key={i} value={list}>
                           {list}
@@ -282,6 +227,7 @@ const Search = () => {
                       onChange={handleChangeToHeight}
                       input={<OutlinedInput label="ToHeight" />}
                     >
+                      <MenuItem value="any">Any</MenuItem>
                       {Heights.map((list, i) => (
                         <MenuItem key={i} value={list}>
                           {list}
@@ -372,7 +318,7 @@ const Search = () => {
                       {Religion.map((i, j) => (
                         <MenuItem
                           key={j}
-                          value={i.name}
+                          value={i.value}
                           //   style={getStyles(name, personName, theme)}
                         >
                           {i.name}
@@ -440,13 +386,13 @@ const Search = () => {
                       input={<OutlinedInput label="Caste" />}
                       //   MenuProps={MenuProps}
                     >
-                      {Caste.map((Regional) => (
+                      {Caste.map((i, j) => (
                         <MenuItem
-                          key={Regional}
-                          value={Regional}
+                          key={j}
+                          value={i.value}
                           //   style={getStyles(name, personName, theme)}
                         >
-                          {Regional.name}
+                          {i.name}
                         </MenuItem>
                       ))}
                     </Select>
@@ -517,7 +463,7 @@ const Search = () => {
                       {State.map((state, i) => (
                         <MenuItem
                           key={i}
-                          value={state.name}
+                          value={state.value}
                           //   style={getStyles(name, personName, theme)}
                         >
                           {state.name}
@@ -550,6 +496,7 @@ const Search = () => {
                       input={<OutlinedInput label="City" />}
                       //   MenuProps={MenuProps}
                     >
+                      <MenuItem value="any">Any</MenuItem>
                       {Citys.map((list, i) => (
                         <MenuItem
                           key={i}
@@ -588,6 +535,7 @@ const Search = () => {
                       input={<OutlinedInput label="Education" />}
                       //   MenuProps={MenuProps}
                     >
+                      <MenuItem value="any">Any</MenuItem>
                       {Education.map((list, i) => (
                         <MenuItem
                           key={i}
