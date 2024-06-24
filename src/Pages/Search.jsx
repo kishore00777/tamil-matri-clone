@@ -7,6 +7,7 @@ import {
   FormControl,
   FormControlLabel,
   Grid,
+  InputLabel,
   MenuItem,
   OutlinedInput,
   Radio,
@@ -14,7 +15,18 @@ import {
   Select,
   Typography,
 } from "@mui/material";
-import { Caste, Regional, Religion, State } from "../Data/Data";
+import {
+  AgeFrom,
+  AgeTo,
+  Caste,
+  Citys,
+  Countrys,
+  Education,
+  Heights,
+  Regional,
+  Religion,
+  State,
+} from "../Data/Data";
 
 const Search = () => {
   const LableStyle = {
@@ -22,10 +34,12 @@ const Search = () => {
     fontWeight: 600,
     color: "#666666",
   };
+  const [gender, setGender] = React.useState("female");
   const [fromAge, setFromAge] = React.useState("");
   const [toAge, setToAge] = React.useState("");
   const [fromHeight, setFromHeight] = React.useState("");
   const [toHeight, setToHeight] = React.useState("");
+  const [maritalStatus, setMaritalStatus] = React.useState("neverMarried");
   const [religion, setReligion] = React.useState("");
   const [tongue, setTongue] = React.useState("");
   const [caste, setCaste] = React.useState("");
@@ -34,6 +48,25 @@ const Search = () => {
   const [city, setCity] = React.useState("");
   const [education, setEducation] = React.useState("");
 
+  console.log(
+    gender,
+    fromAge,
+    toAge,
+    fromHeight,
+    toHeight,
+    maritalStatus,
+    religion,
+    tongue,
+    caste,
+    country,
+    state,
+    city,
+    education
+  );
+
+  const handleChangeGender = (event) => {
+    setGender(event.target.value);
+  };
   const handleChangeFromAge = (event) => {
     setFromAge(event.target.value);
   };
@@ -45,6 +78,9 @@ const Search = () => {
   };
   const handleChangeToHeight = (event) => {
     setToHeight(event.target.value);
+  };
+  const handleMaritalStatus = (event) => {
+    setMaritalStatus(event.target.value);
   };
 
   const handleChangeReligion = (event) => {
@@ -132,9 +168,10 @@ const Search = () => {
                     </FormLabel> */}
                     <RadioGroup
                       aria-labelledby="demo-radio-buttons-group-label"
-                      defaultValue="female"
                       name="radio-buttons-group"
                       sx={{ display: "flex", flexDirection: "row" }}
+                      value={gender}
+                      onChange={handleChangeGender}
                     >
                       <FormControlLabel
                         value="female"
@@ -164,33 +201,39 @@ const Search = () => {
                   sx={{ display: "flex", alignItems: "center", gap: 1 }}
                 >
                   <FormControl fullWidth sx={{ width: "12%" }} size="small">
+                    <InputLabel id="demo-multiple-name-label">
+                      FromAge
+                    </InputLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={fromAge}
                       label=""
                       onChange={handleChangeFromAge}
+                      input={<OutlinedInput label="FromAge" />}
                     >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
+                      {AgeFrom.map((list) => (
+                        <MenuItem value={list}>{list}</MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
                   <Typography>To</Typography>
                   <FormControl fullWidth sx={{ width: "12%" }} size="small">
+                    <InputLabel id="demo-multiple-name-label">ToAge</InputLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={toAge}
                       label=""
                       onChange={handleChangeToAge}
+                      input={<OutlinedInput label="ToAge" />}
                     >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
+                      {AgeTo.map((list) => (
+                        <MenuItem value={list}>{list}</MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
-                  <Typography>year</Typography>
+                  <Typography>years</Typography>
                 </Grid>
               </Grid>
               <Grid container sx={{ marginTop: 1.5 }}>
@@ -207,33 +250,45 @@ const Search = () => {
                   sx={{ display: "flex", alignItems: "center", gap: 1 }}
                 >
                   <FormControl fullWidth sx={{ width: "25%" }} size="small">
+                    <InputLabel id="demo-multiple-name-label">
+                      FromHeight
+                    </InputLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={fromHeight}
                       label=""
                       onChange={handleChangeFromHeight}
+                      input={<OutlinedInput label="FromHeight" />}
                     >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
+                      {Heights.map((list, i) => (
+                        <MenuItem key={i} value={list}>
+                          {list}
+                        </MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
+
                   <Typography>To</Typography>
                   <FormControl fullWidth sx={{ width: "25%" }} size="small">
+                    <InputLabel id="demo-multiple-name-label">
+                      ToHeight
+                    </InputLabel>
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={toHeight}
                       label=""
                       onChange={handleChangeToHeight}
+                      input={<OutlinedInput label="ToHeight" />}
                     >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
+                      {Heights.map((list, i) => (
+                        <MenuItem key={i} value={list}>
+                          {list}
+                        </MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
-                  <Typography>year</Typography>
                 </Grid>
               </Grid>
               <Grid container sx={{ marginTop: 1.5 }}>
@@ -255,9 +310,10 @@ const Search = () => {
                     </FormLabel> */}
                     <RadioGroup
                       aria-labelledby="demo-radio-buttons-group-label"
-                      defaultValue="neverMarried"
                       name="radio-buttons-group"
                       sx={{ display: "flex", flexDirection: "row" }}
+                      value={maritalStatus}
+                      onChange={handleMaritalStatus}
                     >
                       <FormControlLabel
                         value="any"
@@ -302,21 +358,24 @@ const Search = () => {
                   sx={{ display: "flex", alignItems: "center", gap: 1 }}
                 >
                   <FormControl sx={{ m: 1, width: 300 }} size="small">
+                    <InputLabel id="demo-multiple-name-label">
+                      Religion
+                    </InputLabel>
                     <Select
                       labelId="demo-multiple-name-label"
                       id="demo-multiple-name"
                       value={religion}
                       onChange={handleChangeReligion}
-                      //   input={<OutlinedInput label="Name" />}
+                      input={<OutlinedInput label="Religion" />}
                       //   MenuProps={MenuProps}
                     >
-                      {Religion.map((Regional) => (
+                      {Religion.map((i, j) => (
                         <MenuItem
-                          key={Regional}
-                          value={Regional}
+                          key={j}
+                          value={i.name}
                           //   style={getStyles(name, personName, theme)}
                         >
-                          {Regional.name}
+                          {i.name}
                         </MenuItem>
                       ))}
                     </Select>
@@ -337,12 +396,15 @@ const Search = () => {
                   sx={{ display: "flex", alignItems: "center", gap: 1 }}
                 >
                   <FormControl sx={{ m: 1, width: 300 }} size="small">
+                    <InputLabel id="demo-multiple-name-label">
+                      Mother tongue
+                    </InputLabel>
                     <Select
                       labelId="demo-multiple-name-label"
                       id="demo-multiple-name"
                       value={tongue}
                       onChange={handleChangeTonge}
-                      //   input={<OutlinedInput label="" />}
+                      input={<OutlinedInput label="Mother tongue" />}
                       //   MenuProps={MenuProps}
                     >
                       <MenuItem
@@ -369,12 +431,13 @@ const Search = () => {
                   sx={{ display: "flex", alignItems: "center", gap: 1 }}
                 >
                   <FormControl sx={{ m: 1, width: 300 }} size="small">
+                    <InputLabel id="demo-multiple-name-label">Caste</InputLabel>
                     <Select
                       labelId="demo-multiple-name-label"
                       id="demo-multiple-name"
                       value={caste}
                       onChange={handleChangeCaste}
-                      //   input={<OutlinedInput label="Name" />}
+                      input={<OutlinedInput label="Caste" />}
                       //   MenuProps={MenuProps}
                     >
                       {Caste.map((Regional) => (
@@ -404,21 +467,24 @@ const Search = () => {
                   sx={{ display: "flex", alignItems: "center", gap: 1 }}
                 >
                   <FormControl sx={{ m: 1, width: 300 }} size="small">
+                    <InputLabel id="demo-multiple-name-label">
+                      Country
+                    </InputLabel>
                     <Select
                       labelId="demo-multiple-name-label"
                       id="demo-multiple-name"
                       value={country}
                       onChange={handleChangeCountry}
-                      //   input={<OutlinedInput label="Name" />}
+                      input={<OutlinedInput label="Country" />}
                       //   MenuProps={MenuProps}
                     >
-                      {Regional.map((Regional) => (
+                      {Countrys.map((List, i) => (
                         <MenuItem
-                          key={Regional}
-                          value={Regional}
+                          key={i}
+                          value={List.value}
                           //   style={getStyles(name, personName, theme)}
                         >
-                          {Regional}
+                          {List.name}
                         </MenuItem>
                       ))}
                     </Select>
@@ -439,18 +505,19 @@ const Search = () => {
                   sx={{ display: "flex", alignItems: "center", gap: 1 }}
                 >
                   <FormControl sx={{ m: 1, width: 300 }} size="small">
+                    <InputLabel id="demo-multiple-name-label">State</InputLabel>
                     <Select
                       labelId="demo-multiple-name-label"
                       id="demo-multiple-name"
                       value={state}
                       onChange={handleChangeState}
-                      //   input={<OutlinedInput label="Name" />}
+                      input={<OutlinedInput label="State" />}
                       //   MenuProps={MenuProps}
                     >
-                      {State.map((state) => (
+                      {State.map((state, i) => (
                         <MenuItem
-                          key={Regional}
-                          value={Regional}
+                          key={i}
+                          value={state.name}
                           //   style={getStyles(name, personName, theme)}
                         >
                           {state.name}
@@ -474,21 +541,22 @@ const Search = () => {
                   sx={{ display: "flex", alignItems: "center", gap: 1 }}
                 >
                   <FormControl sx={{ m: 1, width: 300 }} size="small">
+                    <InputLabel id="demo-multiple-name-label">City</InputLabel>
                     <Select
                       labelId="demo-multiple-name-label"
                       id="demo-multiple-name"
                       value={city}
                       onChange={handleChangeCity}
-                      //   input={<OutlinedInput label="Name" />}
+                      input={<OutlinedInput label="City" />}
                       //   MenuProps={MenuProps}
                     >
-                      {Regional.map((Regional) => (
+                      {Citys.map((list, i) => (
                         <MenuItem
-                          key={Regional}
-                          value={Regional}
+                          key={i}
+                          value={list}
                           //   style={getStyles(name, personName, theme)}
                         >
-                          {Regional}
+                          {list}
                         </MenuItem>
                       ))}
                     </Select>
@@ -509,28 +577,37 @@ const Search = () => {
                   sx={{ display: "flex", alignItems: "center", gap: 1 }}
                 >
                   <FormControl sx={{ m: 1, width: 300 }} size="small">
+                    <InputLabel id="demo-multiple-name-label">
+                      Education
+                    </InputLabel>
                     <Select
                       labelId="demo-multiple-name-label"
                       id="demo-multiple-name"
                       value={education}
                       onChange={handleChangeEducation}
-                      //   input={<OutlinedInput label="Name" />}
+                      input={<OutlinedInput label="Education" />}
                       //   MenuProps={MenuProps}
                     >
-                      {Regional.map((Regional) => (
+                      {Education.map((list, i) => (
                         <MenuItem
-                          key={Regional}
-                          value={Regional}
+                          key={i}
+                          value={list}
                           //   style={getStyles(name, personName, theme)}
                         >
-                          {Regional}
+                          {list}
                         </MenuItem>
                       ))}
                     </Select>
                   </FormControl>
                 </Grid>
               </Grid>
-              <Box sx={{display: 'flex', justifyContent: 'center', marginBottom: 2}}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: 2,
+                }}
+              >
                 <Button
                   variant="contained"
                   size="small"

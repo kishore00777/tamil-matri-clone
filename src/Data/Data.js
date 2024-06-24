@@ -329,6 +329,17 @@ export const Caste = [
   { name: "Yadav", value: "Yadav" },
   { name: "Mudaliyar", value: "Mudaliyar" },
 ];
+export const Countrys = [
+  { name: "Any", value: "any" },
+  { name: "NRI", value: "NRI" },
+  { name: "Malaysia", value: "Malaysia" },
+  { name: "UAE", value: "UAE" },
+  { name: "Singapore", value: "Singapore" },
+  { name: "USA", value: "USA" },
+  { name: "Sri Lanka", value: "Sri Lanka" },
+  { name: "Saudi Arabia", value: "Saudi Arabia" },
+  { name: "Kuwait", value: "Kuwait" },
+];
 export const State = [
   { name: "Any", value: "any" },
   { name: "Tamil Nadu", value: "Tamil Nadu" },
@@ -339,4 +350,140 @@ export const State = [
   { name: "Andhra Pradesh", value: "Andhra Pradesh" },
   { name: "Delhi", value: "Delhi" },
   { name: "Andaman & Nicobar", value: "Andaman & Nicobar" },
+];
+export const Citys = [
+  "Chennai",
+  "Coimbatore",
+  "Bangalore",
+  "Madurai",
+  "Salem",
+  "Tiruchirappalli",
+  "Erode",
+  "Tiruppur",
+];
+export const Education = [
+  "B.E",
+  "Diploma",
+  "B.Com",
+  "B.Tech",
+  "MBA",
+  "B.Sc",
+  "B.A",
+  "BCA",
+];
+
+export const Heights = [
+  "5'7\"",
+
+  "5'9\"",
+  "5'8\"",
+
+  "5'6\"",
+
+  "5'10\"",
+
+  "5'5\"",
+
+  "6'0\"",
+
+  "5'4\"",
+
+  "5'7\"",
+
+  "5'3\"",
+
+  "5'8\"",
+  "5'6\"",
+
+  "6'1\"",
+
+  "5'7\"",
+
+  "5'9\"",
+
+  "5'8\"",
+
+  "5'10\"",
+
+  "5'5\"",
+
+  "5'7\"",
+
+  "5'4\"",
+
+  "5'7\"",
+
+  "5'3\"",
+
+  "5'8\"",
+  "5'6\"",
+
+  "6'1\"",
+
+  "5'7\"",
+
+  "5'9\"",
+
+  "5'8\"",
+
+  "5'10\"",
+
+  "5'6\"",
+
+  "5'8\"",
+
+  "5'7\"",
+
+  "5'9\"",
+
+  "5'6\"",
+
+  "5'8\"",
+
+  "5'7\"",
+
+  "5'9\"",
+
+  "5'6\"",
+  "5'8\"",
+
+  "5'7\"",
+
+  "5'9\"",
+
+  "5'6\"",
+
+  "5'8\"",
+
+  "5'7\"",
+
+  "5'9\"",
+
+  "5'6\"",
+
+  "5'8\"",
+  "5'7\"",
+
+  "5'9\"",
+
+  "5'6\"",
+
+  "5'8\"",
+
+  "5'7\"",
+
+  "5'9\"",
+
+  "5'6\"",
+
+  "5'8\"",
+
+  "5'7\"",
+  "5'9\"",
+
+  "5'6\"",
+
+  "5'8\"",
+
+  "5'7\"",
 ];
