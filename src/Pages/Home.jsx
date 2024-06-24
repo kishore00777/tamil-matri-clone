@@ -7,12 +7,12 @@ import AboutMatirimony from "../Components/AboutMatirimony";
 import Footer from "../Components/Footer";
 import NavBar from "../Components/NavBar";
 import Browse from "../Components/Home/Browse";
-// import Search from "../Components/Home/Search";
 import { useLocation } from "react-router-dom";
+import SearchForm from "../Components/Home/SearchForm";
 
 export default function Home() {
   const location = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -30,7 +30,7 @@ export default function Home() {
         <Interset />
         <Youtube />
         <Carousels />
-        {/* <Search /> */}
+        <SearchForm />
         <Browse />
         <AboutMatirimony />
         <Footer />
