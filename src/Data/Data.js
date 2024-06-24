@@ -329,3 +329,14 @@ export const Caste = [
   { name: "Yadav", value: "Yadav" },
   { name: "Mudaliyar", value: "Mudaliyar" },
 ];
+export const State = [
+  { name: "Any", value: "any" },
+  { name: "Tamil Nadu", value: "Tamil Nadu" },
+  { name: "Karnataka", value: "Karnataka" },
+  { name: "Pondicherry", value: "Pondicherry" },
+  { name: "Kerala", value: "Kerala" },
+  { name: "Maharashtra", value: "Maharashtra" },
+  { name: "Andhra Pradesh", value: "Andhra Pradesh" },
+  { name: "Delhi", value: "Delhi" },
+  { name: "Andaman & Nicobar", value: "Andaman & Nicobar" },
+];
