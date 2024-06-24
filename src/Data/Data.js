@@ -15,8 +15,7 @@ import KrishnaMythili from "../Assets/Home/krishna-and-mythili-aug-2023.png";
 
 export const navItems = [
   { name: "REGISTER", to: "/registerform" },
-  { name: "SEARCH", to: "/registerform" },
-  { name: "SERVICES", to: "/registerform" },
+  { name: "SEARCH", to: "/search" },
   { name: "UPGRADE", to: "/registerform" },
 ];
 
