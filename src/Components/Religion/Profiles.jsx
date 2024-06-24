@@ -34,7 +34,12 @@ const Profiles = () => {
   const Education = params.get("education");
   const handleValue = () => {
     setValue(
-      (Gender !== null && Gender) ||
+      (Gender !== null &&
+        (Gender === "Female"
+          ? "Tamil Brides"
+          : Gender === "Male"
+          ? "Tamil Grooms"
+          : Gender)) ||
         (religion !== null && `Tamil ${religion} Matrimony`) ||
         (Caste !== null && `Tamil ${Caste} Matrimony`) ||
         (City !== null && `Tamil Matrimony in ${City}`) ||

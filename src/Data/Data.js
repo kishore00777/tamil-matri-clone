@@ -299,3 +299,33 @@ export const BrowseData = [
     ],
   },
 ];
+
+export const Gender = [
+  { name: "Woman", value: "Female" },
+  { name: "Man", value: "Male" },
+];
+
+export const AgeFrom = Array.from({ length: 53 }, (_, i) =>
+  (i + 18).toString()
+);
+export const AgeTo = Array.from({ length: 50 }, (_, i) => (i + 21).toString());
+
+export const Religion = [
+  { name: "Any", value: "any" },
+  { name: "Hindu", value: "Hindu" },
+  { name: "Muslim", value: "Muslim" },
+  { name: "Christian", value: "Christian" },
+];
+
+export const Caste = [
+  { name: "Any", value: "any" },
+  { name: "Adi Dravida", value: "Adi Dravida" },
+  { name: "Vannia Kula Kshatriyar", value: "Vannia Kula Kshatriyar" },
+  { name: "Nadar", value: "Nadar" },
+  { name: "Devar", value: "Devar" },
+  { name: "SC", value: "SC" },
+  { name: "Agamudayar", value: "Agamudayar" },
+  { name: "Vishwakarma", value: "Vishwakarma" },
+  { name: "Yadav", value: "Yadav" },
+  { name: "Mudaliyar", value: "Mudaliyar" },
+];

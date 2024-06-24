@@ -1,19 +1,27 @@
 import { Button, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { BrowseData } from "../../Data/Data";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function Browse() {
   const [val, setVal] = useState(0);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
+  // const handlePush = (category, value) => {
+  //   value === 0 && navigate(`/matrimony?religion=${category}`);
+  //   value === 1 && navigate(`/matrimony?Caste=${category}`);
+  //   value === 2 && navigate(`/matrimony?City=${category}`);
+  //   value === 3 && navigate(`/matrimony?State=${category}`);
+  //   value === 4 && navigate(`/matrimony?Country=${category}`);
+  //   value === 5 && navigate(`/matrimony?Occupation=${category}`);
+  // };
   const handlePush = (category, value) => {
-    value === 0 && navigate(`/matrimony?religion=${category}`);
-    value === 1 && navigate(`/matrimony?Caste=${category}`);
-    value === 2 && navigate(`/matrimony?City=${category}`);
-    value === 3 && navigate(`/matrimony?State=${category}`);
-    value === 4 && navigate(`/matrimony?Country=${category}`);
-    value === 5 && navigate(`/matrimony?Occupation=${category}`);
+    value === 0 && window.open(`/matrimony?religion=${category}`, "_blank");
+    value === 1 && window.open(`/matrimony?Caste=${category}`, "_blank");
+    value === 2 && window.open(`/matrimony?City=${category}`, "_blank");
+    value === 3 && window.open(`/matrimony?State=${category}`, "_blank");
+    value === 4 && window.open(`/matrimony?Country=${category}`, "_blank");
+    value === 5 && window.open(`/matrimony?Occupation=${category}`, "_blank");
   };
   return (
     <>

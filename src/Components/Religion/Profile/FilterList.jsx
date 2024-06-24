@@ -12,10 +12,13 @@ import {
 import React from "react";
 import FilterCards from "./FilterCards";
 import { RelationShip } from "../../../Data/Data";
+// import { useNavigate } from "react-router-dom";
 
 const FilterList = () => {
   const [relationShip, setRelationShip] = React.useState("");
   const [country, setCountry] = React.useState("");
+
+  // const navigate = useNavigate();
 
   const handleChange = (event) => {
     setRelationShip(event.target.value);
@@ -88,6 +91,8 @@ const FilterList = () => {
                 backgroundColor: "#fe9607",
               },
             }}
+            // onClick={() => navigate("/registerform")}
+            onClick={() => window.open("/registerform", "_blank")}
           >
             REGISTER
           </Button>
