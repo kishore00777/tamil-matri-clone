@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../Components/NavBar";
 import {
   Box,
@@ -33,12 +33,12 @@ const Search = () => {
     fontWeight: 600,
     color: "#666666",
   };
-  const [gender, setGender] = React.useState("female");
+  const [gender, setGender] = React.useState("");
   const [fromAge, setFromAge] = React.useState("");
   const [toAge, setToAge] = React.useState("");
   const [fromHeight, setFromHeight] = React.useState("");
   const [toHeight, setToHeight] = React.useState("");
-  const [maritalStatus, setMaritalStatus] = React.useState("neverMarried");
+  const [maritalStatus, setMaritalStatus] = React.useState("");
   const [religion, setReligion] = React.useState("");
   const [tongue, setTongue] = React.useState("");
   const [caste, setCaste] = React.useState("");
@@ -87,6 +87,40 @@ const Search = () => {
   const handleChangeEducation = (e) => {
     setEducation(e.target.value);
   };
+
+  const clearAll = () => {
+    setGender("");
+    setFromAge("");
+    setToAge("");
+    setFromHeight("");
+    setToHeight("");
+    setMaritalStatus("");
+    setReligion("");
+    setCaste("");
+    setCountry("");
+    setState("");
+    setCity("");
+    setEducation("");
+  }
+
+  const handleAllSearch = () => {
+    window.open(
+      `/matrimony?gender=${gender}&ageFrom=${fromAge}&ageTo=${toAge}&fromHeight=${fromHeight}&toHeight=${toHeight}&maritalStatus=${maritalStatus}&religion=${religion}$tongue=${tongue}&Caste=${caste}&Country=${country}&State=${state}&City=${city}&education=${education}`,
+      "_blank"
+    );
+      // clearAll();
+  };
+  useEffect(() => {
+    if (fromAge > toAge) {
+      setToAge("");
+    }
+  }, [fromAge, toAge]);
+
+  useEffect(() => {
+    if (fromHeight > toHeight) {
+      setToHeight("");
+    }
+  }, [fromHeight, toHeight]);
 
   return (
     <>
@@ -206,7 +240,7 @@ const Search = () => {
                       input={<OutlinedInput label="FromHeight" />}
                     >
                       <MenuItem value="any">Any</MenuItem>
-                      {Heights.map((list, i) => (
+                      {Heights.sort((a, b) => a - b).map((list, i) => (
                         <MenuItem key={i} value={list}>
                           {list}
                         </MenuItem>
@@ -563,6 +597,21 @@ const Search = () => {
                     backgroundColor: "#ff7805",
                     "&:hover": { backgroundColor: "#ff7805" },
                   }}
+                  onClick={() =>
+                    !fromAge ||
+                    !toAge ||
+                    !fromHeight ||
+                    !toHeight ||
+                    !religion ||
+                    !tongue ||
+                    !caste ||
+                    !country ||
+                    !state ||
+                    !city ||
+                    !education
+                      ? alert("Fill all the Fields")
+                      : handleAllSearch()
+                  }
                 >
                   Search
                 </Button>
