@@ -304,12 +304,12 @@ const Search = () => {
                         label="Any"
                       />
                       <FormControlLabel
-                        value="neverMarried"
+                        value="Unmarried"
                         control={<Radio />}
                         label="Never Married"
                       />
                       <FormControlLabel
-                        value="Widowed"
+                        value="Widow"
                         control={<Radio />}
                         label="Widowed"
                       />
@@ -318,11 +318,11 @@ const Search = () => {
                         control={<Radio />}
                         label="Divorced"
                       />
-                      <FormControlLabel
+                      {/* <FormControlLabel
                         value="Awaiting divorce"
                         control={<Radio />}
                         label="Awaiting divorce"
-                      />
+                      /> */}
                     </RadioGroup>
                   </FormControl>
                 </Grid>

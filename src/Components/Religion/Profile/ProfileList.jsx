@@ -91,7 +91,9 @@ const ProfileList = () => {
       (Education !== "any" ? list.Education === Education : true)
   );
 
-  console.log(SearchAll);
+  const handleViewProfile = (id) => {
+    navigate(`/viewprofile?profileId=${id}`);
+  };
 
   const handleView = (e) => {
     navigate(`/matrimony${AnyOne}&viewmore=${e}`);
@@ -100,22 +102,6 @@ const ProfileList = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
-
-  console.log(
-    Gender,
-    AgeFrom,
-    AgeTo,
-    HeightFrom,
-    HeightTo,
-    MaritalStatus,
-    Tounge,
-    religion,
-    Caste,
-    City,
-    State,
-    Country,
-    Education
-  );
 
   return (
     <>
@@ -267,17 +253,18 @@ const ProfileList = () => {
                                   {list?.occupation}
                                   &nbsp;{list?.Address}
                                 </Typography>
-                                <Link
+                                <Typography
                                   style={{
                                     textDecoration: "none",
                                     color: "#f48420",
                                     fontSize: "18px",
                                     fontWeight: "bolder",
+                                    cursor: "pointer",
                                   }}
-                                  to={"/viewprofile"}
+                                  onClick={() => handleViewProfile(list.id)}
                                 >
                                   View Full Profile
-                                </Link>
+                                </Typography>
                               </Grid>
                             </Grid>
                             <Grid
@@ -470,17 +457,18 @@ const ProfileList = () => {
                                   {list?.occupation}
                                   &nbsp;{list?.Address}
                                 </Typography>
-                                <Link
+                                <Typography
                                   style={{
                                     textDecoration: "none",
                                     color: "#f48420",
                                     fontSize: "18px",
                                     fontWeight: "bolder",
+                                    cursor: "pointer",
                                   }}
-                                  to={"/viewprofile"}
+                                  onClick={() => handleViewProfile(list.id)}
                                 >
                                   View Full Profile
-                                </Link>
+                                </Typography>
                               </Grid>
                             </Grid>
                             <Grid

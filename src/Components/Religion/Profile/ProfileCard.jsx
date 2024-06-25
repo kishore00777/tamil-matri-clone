@@ -9,10 +9,13 @@ import {
 import CallIcon from "../../../Assets/Religion/call-icon.png";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ProfileCard({ data }) {
   const navigate = useNavigate();
+  const handleViewProfile = (id) => {
+    navigate(`/viewprofile?profileid=${id}`);
+  };
   return (
     <>
       <Grid sx={{ mt: 4 }}>
@@ -85,17 +88,18 @@ export default function ProfileCard({ data }) {
                       {list?.occupation}
                       &nbsp;{list?.Address}
                     </Typography>
-                    <a
-                      style={{
+                    <Typography
+                      sx={{
                         textDecoration: "none",
                         color: "#f48420",
                         fontSize: "18px",
                         fontWeight: "bolder",
+                        cursor: "pointer",
                       }}
-                      href="hi"
+                      onClick={() => handleViewProfile(list.id)}
                     >
                       View Full Profile
-                    </a>
+                    </Typography>
                   </Grid>
                 </Grid>
                 <Grid
