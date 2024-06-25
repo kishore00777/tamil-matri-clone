@@ -14,6 +14,7 @@ import CallIcon from "../../../Assets/Religion/call-icon.png";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { profiles } from "../../../Data/Profiles";
+import ProfileCard from "./ProfileCard";
 
 const ProfileList = () => {
   const navigate = useNavigate();
@@ -25,6 +26,8 @@ const ProfileList = () => {
   const Gender = params.get("gender");
   const AgeFrom = params.get("ageFrom");
   const AgeTo = params.get("ageTo");
+  const HeightFrom = params.get("fromHeight");
+  const HeightTo = params.get("toHeight");
   const religion = params.get("religion");
   const Caste = params.get("Caste");
   const City = params.get("City");
@@ -32,6 +35,8 @@ const ProfileList = () => {
   const Country = params.get("Country");
   const Occupation = params.get("Occupation");
   const Education = params.get("education");
+  const MaritalStatus = params.get("maritalStatus");
+  const Tounge = params.get("tongue");
   const viewMore = params.get("viewmore");
 
   const filtFemale = profiles.filter(
@@ -69,6 +74,25 @@ const ProfileList = () => {
       (Caste !== "any" ? list.caste === Caste : true)
   );
 
+  const SearchAll = profiles.filter(
+    (list) =>
+      list.Gender === Gender &&
+      (AgeFrom !== "any" ? list.Age >= AgeFrom : true) &&
+      (AgeTo !== "any" ? list.Age <= AgeTo : true) &&
+      (HeightFrom !== "any" ? list.Height >= HeightFrom : true) &&
+      (HeightTo !== "any" ? list.Height <= HeightTo : true) &&
+      (MaritalStatus !== "any" ? list.MaritalStatus === MaritalStatus : true) &&
+      (religion !== "any" ? list.Religion === religion : true) &&
+      (Tounge !== "any" ? list.Language === Tounge : true) &&
+      (Caste !== "any" ? list.caste === Caste : true) &&
+      (Country !== "any" ? list.country === Country : true) &&
+      (State !== "any" ? list.State === State : true) &&
+      (City !== "any" ? list.City === City : true) &&
+      (Education !== "any" ? list.Education === Education : true)
+  );
+
+  console.log(SearchAll);
+
   const handleView = (e) => {
     navigate(`/matrimony${AnyOne}&viewmore=${e}`);
   };
@@ -77,13 +101,37 @@ const ProfileList = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
+  console.log(
+    Gender,
+    AgeFrom,
+    AgeTo,
+    HeightFrom,
+    HeightTo,
+    MaritalStatus,
+    Tounge,
+    religion,
+    Caste,
+    City,
+    State,
+    Country,
+    Education
+  );
+
   return (
     <>
       {Gender !== null &&
       AgeFrom !== null &&
       AgeTo !== null &&
+      HeightFrom !== null &&
+      HeightTo !== null &&
+      MaritalStatus !== null &&
+      Tounge !== null &&
       religion !== null &&
-      Caste !== null ? (
+      Caste !== null &&
+      State !== null &&
+      Country !== null &&
+      City !== null &&
+      Education !== null ? (
         <>
           <Grid>
             <Typography
@@ -98,6 +146,7 @@ const ProfileList = () => {
               {Gender === "Female" ? "Tamil Brides" : "Tamil Grooms"}
             </Typography>
           </Grid>
+<<<<<<< Updated upstream
           <Grid sx={{ mt: 4 }}>
             {SearchFilter.length === 0 ? (
               <Typography
@@ -243,7 +292,30 @@ const ProfileList = () => {
                 </Card>
               ))
             )}
+=======
+          <ProfileCard data={SearchAll} />
+        </>
+      ) : Gender !== null &&
+        AgeFrom !== null &&
+        AgeTo !== null &&
+        religion !== null &&
+        Caste !== null ? (
+        <>
+          <Grid>
+            <Typography
+              align="center"
+              sx={{
+                paddingY: 1.8,
+                backgroundColor: "#f6f6f6",
+                fontSize: "28px",
+                border: "1px solid #e1dbdb",
+              }}
+            >
+              {Gender === "Female" ? "Tamil Brides" : "Tamil Grooms"}
+            </Typography>
+>>>>>>> Stashed changes
           </Grid>
+          <ProfileCard data={SearchFilter} />
         </>
       ) : (
         <>
@@ -263,6 +335,7 @@ const ProfileList = () => {
                   Tamil Brides
                 </Typography>
               </Grid>
+              {/* <ProfileCard data={filtFemale} /> */}
               <Grid sx={{ mt: 4 }}>
                 {filtFemale.length === 0 ? (
                   <Typography

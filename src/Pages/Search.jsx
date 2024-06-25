@@ -26,6 +26,7 @@ import {
   Religion,
   State,
 } from "../Data/Data";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
   const LableStyle = {
@@ -33,6 +34,8 @@ const Search = () => {
     fontWeight: 600,
     color: "#666666",
   };
+
+  const navigate = useNavigate();
   const [gender, setGender] = React.useState("");
   const [fromAge, setFromAge] = React.useState("");
   const [toAge, setToAge] = React.useState("");
@@ -101,14 +104,14 @@ const Search = () => {
     setState("");
     setCity("");
     setEducation("");
-  }
+  };
 
   const handleAllSearch = () => {
     window.open(
-      `/matrimony?gender=${gender}&ageFrom=${fromAge}&ageTo=${toAge}&fromHeight=${fromHeight}&toHeight=${toHeight}&maritalStatus=${maritalStatus}&religion=${religion}$tongue=${tongue}&Caste=${caste}&Country=${country}&State=${state}&City=${city}&education=${education}`,
+      `/matrimony?gender=${gender}&ageFrom=${fromAge}&ageTo=${toAge}&fromHeight=${fromHeight}&toHeight=${toHeight}&maritalStatus=${maritalStatus}&religion=${religion}&tongue=${tongue}&Caste=${caste}&Country=${country}&State=${state}&City=${city}&education=${education}`,
       "_blank"
     );
-      // clearAll();
+    // clearAll();
   };
   useEffect(() => {
     if (fromAge > toAge) {
@@ -150,12 +153,12 @@ const Search = () => {
                       onChange={handleChangeGender}
                     >
                       <FormControlLabel
-                        value="female"
+                        value="Female"
                         control={<Radio />}
                         label="Female"
                       />
                       <FormControlLabel
-                        value="male"
+                        value="Male"
                         control={<Radio />}
                         label="Male"
                       />
