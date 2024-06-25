@@ -9,12 +9,12 @@ import {
 import CallIcon from "../../../Assets/Religion/call-icon.png";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfileCard({ data }) {
   const navigate = useNavigate();
   const handleViewProfile = (id) => {
-    navigate(`/viewprofile?profileid=${id}`);
+    window.open(`/viewprofile?profileId=${id}`, "_blank");
   };
   return (
     <>

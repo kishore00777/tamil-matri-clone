@@ -92,7 +92,7 @@ const ProfileList = () => {
   );
 
   const handleViewProfile = (id) => {
-    navigate(`/viewprofile?profileId=${id}`);
+    window.open(`/viewprofile?profileId=${id}`, "_blank");
   };
 
   const handleView = (e) => {
