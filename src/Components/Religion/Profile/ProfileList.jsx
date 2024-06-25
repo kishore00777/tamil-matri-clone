@@ -12,7 +12,7 @@ import React, { useEffect } from "react";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CallIcon from "../../../Assets/Religion/call-icon.png";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { profiles } from "../../../Data/Profiles";
 
 const ProfileList = () => {
@@ -168,17 +168,17 @@ const ProfileList = () => {
                           {list?.occupation}
                           &nbsp;{list?.Address}
                         </Typography>
-                        <a
-                          style={{
-                            textDecoration: "none",
-                            color: "#f48420",
-                            fontSize: "18px",
-                            fontWeight: "bolder",
-                          }}
-                          href="hi"
-                        >
-                          View Full Profile
-                        </a>
+                        <Link
+                                  style={{
+                                    textDecoration: "none",
+                                    color: "#f48420",
+                                    fontSize: "18px",
+                                    fontWeight: "bolder",
+                                  }}
+                                  to={"/viewprofile"}
+                                >
+                                  View Full Profile
+                                </Link>
                       </Grid>
                     </Grid>
                     <Grid
@@ -342,17 +342,17 @@ const ProfileList = () => {
                                   {list?.occupation}
                                   &nbsp;{list?.Address}
                                 </Typography>
-                                <a
+                                <Link
                                   style={{
                                     textDecoration: "none",
                                     color: "#f48420",
                                     fontSize: "18px",
                                     fontWeight: "bolder",
                                   }}
-                                  href="hi"
+                                  to={"/viewprofile"}
                                 >
                                   View Full Profile
-                                </a>
+                                </Link>
                               </Grid>
                             </Grid>
                             <Grid
@@ -545,17 +545,17 @@ const ProfileList = () => {
                                   {list?.occupation}
                                   &nbsp;{list?.Address}
                                 </Typography>
-                                <a
+                                <Link
                                   style={{
                                     textDecoration: "none",
                                     color: "#f48420",
                                     fontSize: "18px",
                                     fontWeight: "bolder",
                                   }}
-                                  href="hi"
+                                  to={"/viewprofile"}
                                 >
                                   View Full Profile
-                                </a>
+                                </Link>
                               </Grid>
                             </Grid>
                             <Grid

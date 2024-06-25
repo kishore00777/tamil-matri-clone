@@ -6,6 +6,7 @@ import Login from "./Pages/Login";
 import Search from "./Pages/Search";
 import { ThemeProvider } from "@mui/material";
 import { Theme } from "./Theme";
+import ViewProfile from "./Pages/ViewProfile";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/registerform" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/viewprofile" element={<ViewProfile />}/>
         </Routes>
       </Router>
     </ThemeProvider>
